@@ -1,0 +1,52 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.Header .profile>*,
+.Header .logo>* {
+    font-family: 'Great Vibes', cursive;
+}
+
+.Header .profile img ,
+.logo img {
+    height: 50px;
+}
+
+.Header .profile a,
+.logo a {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.Header .profile strong,
+.logo strong {
+    font-size: 2rem;
+    margin: 0 10px;
+}
+
+.Header .nav {
+    display: flex;
+    align-items: center;
+    
+}
+
+.Header .nav>* {
+    padding: 0px 10px;
+}
+
+.Header .nav strong {
+    font-size: 1.2rem;
+}
+
+.Header .nav strong:hover {
+    color: rgb(83, 255, 31);
+}
+
+.Header .profile i {
+    padding-left: 20px;
+    font-size: 2.5rem;
+    color: rgb(83, 255, 31);
+}

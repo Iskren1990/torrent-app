@@ -1,4 +1,4 @@
-import style from './Weather.module.scss';
+import style from './Weather.module.css';
 
 function Weather() {
     return (

@@ -1,4 +1,4 @@
-import style from './Video.module.scss';
+import style from './Video.module.css';
 
 const url = "https://www.youtube.com/embed/Qtua5fgZDW4?controls=1";
 
