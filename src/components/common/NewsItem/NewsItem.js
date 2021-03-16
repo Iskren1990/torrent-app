@@ -4,7 +4,9 @@ const NewsItem = ({ title, source, url, urlToImage, description }) => {
 
     return (
         <article className={style.NewsItem}>
-            <img src={urlToImage} alt={title} />
+            <div className={style.ImgWrapper}>
+                <img src={urlToImage} alt={title} />
+            </div>
             <div className={style.contentWrapper}>
                 <h3>{title}</h3>
                 <p>{description}</p>

@@ -8,11 +8,16 @@
     overflow: hidden;
 }
 
-.NewsItem img {
-    object-fit: cover;
-    width: 250px;
+.NewsItem .ImgWrapper {
+    width: 40%;
     padding: 5px;
     overflow: hidden;
+    display: flex;
+}
+
+.NewsItem img {
+    object-fit: cover;
+    width: 100%;
 }
 
 .NewsItem .contentWrapper {
