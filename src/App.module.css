@@ -1,0 +1,19 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  width: 90%;
+  max-width: 1400px;
+  text-align: center;
+  min-height: 100vh;
+  color: rgb(255, 255, 255);
+}
+
+.ContentWrapper {
+  display: flex;
+}
+
+
+
+

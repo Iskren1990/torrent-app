@@ -1,0 +1,20 @@
+.Footer {
+    text-align: center;
+    display: flex;
+    padding: 10px 0px;
+}
+
+.Footer ul {
+    display: flex;
+    justify-content: center;
+}
+
+.Footer li {
+    margin: 0px 5px;
+    padding: 5px 10px;
+}
+
+.FooterNav{
+    transform: translateX(100px);
+    flex-grow: 1;
+}

@@ -1,0 +1,9 @@
+.NewsSection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.NewsSection .Links {
+    flex-basis: 40%;
+}
