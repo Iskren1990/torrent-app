@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import style from './Weather.module.css';
+// import style from './Weather.module.css';
 
 function Weather() {
     const [city, setCity] = useState(0);
@@ -8,7 +8,6 @@ function Weather() {
             .then(x => x.text())
             .then(x => {
                 const location = x.split("City: ")[1].split("IP: ")[0].trim();
-                console.log(location);
                 setCity(location)
             });
     }) 

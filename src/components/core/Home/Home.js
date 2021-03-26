@@ -1,4 +1,3 @@
-import style from './Home.module.css';
 import {Fragment} from 'react';
 import Weather from '../../common/Weather-widget';
 import NewsSection from '../NewsSection';

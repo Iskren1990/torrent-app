@@ -1,0 +1,12 @@
+.TorrentInfoField {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 100%;
+    border-bottom: 2px solid rgb(128, 128, 128);
+    margin-bottom: 20px;
+}
+
+.TorrentInfoField>* {
+    padding: 0px 5px;
+}

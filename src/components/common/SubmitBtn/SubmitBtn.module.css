@@ -1,0 +1,14 @@
+.Submit {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(83, 255, 31);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin: 20px;
+}
+
+.Submit:hover {
+    background-color: rgb(83, 255, 31);
+    color: rgb(40, 44, 52);
+}

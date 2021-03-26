@@ -1,0 +1,24 @@
+.Wrapper {
+    flex: 1 1 100%;
+    margin: 20px;
+}
+
+.Label {
+    display: block;
+    padding: 20px;
+}
+
+.DescriptionField {
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 30%);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+
+
+.DescriptionField::-webkit-scrollbar {
+    display: none;
+  }

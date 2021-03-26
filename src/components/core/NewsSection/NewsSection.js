@@ -1,6 +1,5 @@
 import style from './NewsSection.module.css';
 import NewsItem from '../../common/NewsItem';
-import { useEffect, useState } from 'react';
 import news from '../../../mock/news.json';
 
 const NewsSection = () => {

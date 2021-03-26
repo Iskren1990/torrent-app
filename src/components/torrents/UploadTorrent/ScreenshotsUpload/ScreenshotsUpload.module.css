@@ -1,0 +1,44 @@
+.row {
+    flex: 1 1 100%;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.Label {
+    width: 50%;
+    text-align: start;
+    position: relative;
+    overflow: hidden;
+}
+
+.Label::after {
+    content: "\f019";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left: 0%;
+    transform: translate(190%, 150%);
+    z-index: -1;
+}
+
+/* Style for the input type File :( */
+
+input[type=file]::-webkit-file-upload-button, 
+input[type=file]::file-selector-button {
+    background: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+    padding: 2rem;
+    border: 2px dashed rgb(83, 255, 31);
+    border-radius: 5px;
+    font-size: 1px;
+}
+
+input[type=file]::-webkit-file-upload-button, 
+input[type=file]::file-selector-button:hover {
+    cursor: pointer;
+}

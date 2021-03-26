@@ -1,0 +1,21 @@
+.ScreenshotsSection {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+}
+
+.Image {
+    width: 100%;
+    min-width: 300px;
+    object-fit: contain;
+    height: 250px;
+    padding: 10px;
+}
+
+.Cont {
+    flex: 0 0 30%;
+    margin: auto;
+}

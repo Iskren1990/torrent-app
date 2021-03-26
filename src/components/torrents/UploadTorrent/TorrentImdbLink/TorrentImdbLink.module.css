@@ -1,0 +1,11 @@
+.row {
+    flex: 1 1 100%;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.imdbLink {
+    width: 50%;
+}
