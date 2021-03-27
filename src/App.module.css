@@ -10,6 +10,18 @@
   color: rgb(255, 255, 255);
 }
 
+.App::after{
+  content: "";
+  position: absolute;
+  background: center / contain no-repeat url('./assets/Binary-Globe-2.svg');
+  height: 60%;
+  width: 80%;
+  rotate: 23.5deg;
+  z-index: -1;
+  top: 15%;
+  left: -25%;
+}
+
 .ContentWrapper {
   display: flex;
 }

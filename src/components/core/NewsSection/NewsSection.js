@@ -11,7 +11,7 @@ const NewsSection = () => {
     return (
         <section className={style.NewsSection}>
             {news.articles.slice(0, 6).map(article =>
-                <a className={style.Links} href={article.url}>
+                <a key={article.url} className={style.Links} href={article.url}>
                     <NewsItem
                         {...article}
                     >

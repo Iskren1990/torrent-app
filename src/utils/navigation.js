@@ -1,5 +1,6 @@
 import Home from "../components/core/Home";
 import UploadTorrent from "../components/torrents/UploadTorrent/UploadTorrent";
+import Register from '../components/user/Register';
 
 const navData = {
     home: {
@@ -39,8 +40,7 @@ const navData = {
     userRegister: {
         path: "/user/register",
         title: "Register",
-        component: Home
-        //todo
+        component: Register
     }
 }
 
