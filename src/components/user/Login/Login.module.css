@@ -1,0 +1,8 @@
+.LoginForm {
+    margin: auto;
+}
+
+.LoginForm>h1 {
+    font-size: 1.5rem;
+    padding: 5px;
+}

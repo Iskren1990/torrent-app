@@ -1,6 +1,7 @@
 import Home from "../components/core/Home";
 import UploadTorrent from "../components/torrents/UploadTorrent/UploadTorrent";
 import Register from '../components/user/Register';
+import Login from '../components/user/Login';
 
 const navData = {
     home: {
@@ -28,8 +29,7 @@ const navData = {
     userLogin: {
         path: "/user/login",
         title: "Login",
-        component: Home
-        //todo
+        component: Login
     },
     userLogout: {
         path: "/user/logout",
