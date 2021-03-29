@@ -4,9 +4,9 @@ import style from './ScreenshotsUpload.module.css';
 import ScreenshotsSection from '../../common/ScreenshotsSection';
 
 
-const ScreenshotsUpload = ({ setPics }) => {
+const ScreenshotsUpload = ({ setPics, single }) => {
 
-    const [picUrls, setPicUrls] = useState([])
+    const [picUrls, setPicUrls] = useState([]);
 
     const loadFile = (event) => {
         const pics = new FormData();
@@ -15,7 +15,7 @@ const ScreenshotsUpload = ({ setPics }) => {
         setPicUrls(urls);
         [...event.target.files]
             .map(pic => pics.append("file", pic, pic.name));
-        setPics(pics);
+        // setPics(pics);
     };
 
     return (
@@ -30,7 +30,7 @@ const ScreenshotsUpload = ({ setPics }) => {
                         accept="image/*"
                         name="file"
                         id="torrentFile"
-                        multiple
+                        {...(single !== false && {multiple: "multiple"})}
                     />
                 </div>
             </div>

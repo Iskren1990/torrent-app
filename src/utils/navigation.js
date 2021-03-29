@@ -2,6 +2,7 @@ import Home from "../components/core/Home";
 import UploadTorrent from "../components/torrents/UploadTorrent/UploadTorrent";
 import Register from '../components/user/Register';
 import Login from '../components/user/Login';
+import Profile from '../components/user/Profile';
 
 const navData = {
     home: {
@@ -12,8 +13,7 @@ const navData = {
     userProfile: {
         path: "/user/profile",
         title: "Profile",
-        component: Home
-        //todo
+        component: Profile
     },
     torrents: {
         path: "/torrents",

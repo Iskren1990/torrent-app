@@ -9,7 +9,7 @@ function Weather() {
             .then(x => {
                 const location = x.split("City: ")[1].split("IP: ")[0].trim();
                 setCity(location)
-            });
+            }).catch(console.log);
     }) 
     return (
         <iframe
@@ -17,7 +17,7 @@ function Weather() {
             width="140"
             height="350"
             scrolling="no"
-            frameborder="0"
+            frameBorder="0"
             allowtransparency="true"
             src="https://sinoptik.bg/widget/100727011/3/140/350/10?url=https://m.netinfo.bg/sinoptik/js/show_widget.js"
         >

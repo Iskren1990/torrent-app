@@ -9,7 +9,7 @@ const Register = ({history}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [age, setAge] = useState(Number);
+    const [age, setAge] = useState("");
 
     const registerSubmitHandler = (e) => {
         e.preventDefault();

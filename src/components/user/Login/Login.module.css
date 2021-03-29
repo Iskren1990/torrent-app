@@ -1,5 +1,7 @@
 .LoginForm {
     margin: auto;
+    border: 5px solid rgba(190, 189, 189, 0.4);
+    padding: 20px;
 }
 
 .LoginForm>h1 {
