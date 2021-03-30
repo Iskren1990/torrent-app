@@ -11,7 +11,7 @@ const Login = () => {
 
     const loginSubmitHandler = (e) => {
         e.preventDefault();
-        UserService.login();
+        UserService.login({username, password});
     }
 
     return (

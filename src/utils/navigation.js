@@ -3,6 +3,8 @@ import UploadTorrent from "../components/torrents/UploadTorrent/UploadTorrent";
 import Register from '../components/user/Register';
 import Login from '../components/user/Login';
 import Profile from '../components/user/Profile';
+import Logout from '../components/user/Logout';
+
 
 const navData = {
     home: {
@@ -34,7 +36,7 @@ const navData = {
     userLogout: {
         path: "/user/logout",
         title: "Logout",
-        component: Home
+        component: Logout
         //todo
     },
     userRegister: {

@@ -13,8 +13,10 @@ const Register = ({history}) => {
 
     const registerSubmitHandler = (e) => {
         e.preventDefault();
-        UserService.register();
-        history.push("/");
+        UserService
+        .register({username, password, email, age})
+        .then(history.push("/"))
+        .catch(console.log);
     }
 
     return (

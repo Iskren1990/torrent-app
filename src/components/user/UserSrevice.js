@@ -1,14 +1,29 @@
-// const url = "";
+const url = "http://localhost:3001/api/user";
 
 const UserService = {
-    register: () => {
-        console.log("registered");
+    register: (userData) => {
+        return fetch(`${url}/register`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(userData) 
+        })
+            .then(res => res.json());
     },
-    login: () => {
-        console.log("logged"); 
+    login: (userData) => {
+        return fetch(`${url}/login`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(userData) 
+        })
+            .then(res => res.json());
     },
     logout: () => {
-        console.log("logged out");
+        return fetch(`${url}/logout`)
+            .then(res => res.json());
     }
 }
 
