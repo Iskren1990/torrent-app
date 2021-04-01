@@ -5,32 +5,35 @@ import CommonImage from '../../common/CommonImage';
 import CommonInput from '../../common/CommonInput';
 import spaceLeader from '../../../assets/space-leader.svg';
 import SubmitBtn from '../../common/SubmitBtn';
-import ScreenshotsUpload from '../../torrents/UploadTorrent/ScreenshotsUpload'
+import ScreenshotsUpload from '../../common/ScreenshotsUpload';
 
-let avatar = false//"https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80"
-
-const UserInfo = () => {
-    const [username, setUsername] = useState("Genadi");
-    const [email, setEmail] = useState("Icko@abv.bg");
-    const [age, setAge] = useState("");
+const UserInfo = (userData) => {
+    userData = {...userData.userData}
+    const [username, setUsername] = useState(userData.username);
+    const [email, setEmail] = useState(userData.email);
+    const [age, setAge] = useState(userData.age);
+    const [picUrls, setPicUrls] = useState(userData.avatar || spaceLeader);
     const [isNotEdditable, setIsNotEdditable] = useState(true);
+    const [screenshotsFile, setScreenshotsFile] = useState({})
 
-    const editHandler = (e) => {
+    const editBtnHandler = (e) => {
         setIsNotEdditable(!isNotEdditable);
     }
 
     const editInfoSubmitHandler = (e) => {
         e.preventDefault();
     }
-
-    const setAvatar = () => {
-        avatar=""
-    }
-
+    
     return (
         <form onSubmit={editInfoSubmitHandler}>
-            <CommonImage src={avatar || spaceLeader} style={style.Img} alt={"User Picture"} />
-            {isNotEdditable || <ScreenshotsUpload setPic={setAvatar} single={false} />}
+            <CommonImage src={picUrls} style={style.Img} alt={"User Picture"} />
+            {
+                isNotEdditable
+                || <ScreenshotsUpload
+                    setPicUrls={e => setPicUrls(e)}
+                    setPicsForUpload={e => setScreenshotsFile(e)}
+                />
+            }
             <CommonInput
                 value={username}
                 id={username}
@@ -53,7 +56,11 @@ const UserInfo = () => {
                 onChange={e => setAge(e.target.value)}
                 readonly={isNotEdditable}
             />
-            <SubmitBtn value={isNotEdditable ? "Edit" : "Cancel"} type={"button"} onClick={(e) => editHandler(e)} />
+            <SubmitBtn
+                value={isNotEdditable ? "Edit" : "Cancel"}
+                type={"button"}
+                onClick={(e) => editBtnHandler(e)}
+            />
             {isNotEdditable || <SubmitBtn value={"Save"} />}
         </form>
     );

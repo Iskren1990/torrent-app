@@ -1,11 +1,12 @@
 import style from './Register.module.css';
 import CommonInput from '../../common/CommonInput';
 import SubmitBtn from '../../common/SubmitBtn';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import UserService from '../UserSrevice';
-
+import UserContextStore from '../../../UserContextStore';
 
 const Register = ({history}) => {
+    const userData = useContext(UserContextStore);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
@@ -15,8 +16,10 @@ const Register = ({history}) => {
         e.preventDefault();
         UserService
         .register({username, password, email, age})
+        .then(res => userData.logIn(res))
         .then(history.push("/"))
         .catch(console.log);
+        console.log(userData);
     }
 
     return (

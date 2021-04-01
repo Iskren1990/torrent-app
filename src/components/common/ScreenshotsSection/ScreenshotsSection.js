@@ -1,7 +1,8 @@
 import style from './ScreenshotsSection.module.css';
-import CommonImage from '../../../common/CommonImage';
+import CommonImage from '../CommonImage';
 
-const ScreenshotsSection = ({picUrls}) => {
+const ScreenshotsSection = ({picUrls, styles}) => {
+    const imgStyle = styles || style.Image;
 
     return (
         <div className={style.ScreenshotsSection}>
@@ -9,7 +10,7 @@ const ScreenshotsSection = ({picUrls}) => {
                 picUrls.map(x =>
                     <div className={style.Cont} key={x}>
                         <CommonImage
-                            style={style.Image}
+                            style={imgStyle}
                             src={x}
                             alt="Wrong Format" />
                     </div>

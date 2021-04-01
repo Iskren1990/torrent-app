@@ -1,3 +1,5 @@
+// import { useContext } from 'react';
+
 import styles from './App.module.css';
 import Header from './components/core/Header';
 import Footer from './components/core/Footer';
@@ -6,6 +8,7 @@ import { Switch, Route } from "react-router-dom";
 import navData from './utils/navigation';
 
 function App() {
+
   return (
     <div className={styles.App}>
       <Header></Header>

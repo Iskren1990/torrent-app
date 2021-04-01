@@ -5,6 +5,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 .Label {
@@ -25,8 +26,6 @@
     transform: translate(190%, 150%);
     z-index: -1;
 }
-
-/* Style for the input type File :( */
 
 input[type=file]::-webkit-file-upload-button, 
 input[type=file]::file-selector-button {

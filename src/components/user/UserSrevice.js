@@ -4,25 +4,37 @@ const UserService = {
     register: (userData) => {
         return fetch(`${url}/register`, {
             method: "POST",
+            credentials: "include",
             headers: {
                 'Content-Type': 'application/json'
-              },
-            body: JSON.stringify(userData) 
+            },
+            body: JSON.stringify(userData)
         })
             .then(res => res.json());
     },
     login: (userData) => {
         return fetch(`${url}/login`, {
             method: "POST",
+            credentials: "include",
             headers: {
                 'Content-Type': 'application/json'
-              },
-            body: JSON.stringify(userData) 
+            },
+            body: JSON.stringify(userData)
+        })
+            .then(res => res.json());
+    },
+    profile: () => {
+        return fetch(`${url}/profile`, {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                'Content-Type': 'application/json'
+            },
         })
             .then(res => res.json());
     },
     logout: () => {
-        return fetch(`${url}/logout`)
+        return fetch(`${url}/logout`, {credentials: "include"})
             .then(res => res.json());
     }
 }

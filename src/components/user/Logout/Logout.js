@@ -1,21 +1,26 @@
+import { useContext } from 'react';
+
 import style from './Logout.module.css';
 import SubmitBtn from '../../common/SubmitBtn';
 import UserService from '../UserSrevice';
+import UserContextStore from '../../../UserContextStore';
 
 const Logout = ({ history }) => {
+    const userData = useContext(UserContextStore);
+
     const logoutPageHandler = (e) => {
         e.preventDefault()
         UserService.logout()
-        .then(res => 
-            res.status == "200"
-            ? history.push('/')
-            : history.push('/') // toaster message
-        )
-        .catch(history.push('/'));
+            .then(res =>
+                res.message === "Logged out successfully"
+                    ? history.push('/')
+                    : history.push('/') // toaster message
+            )
+            .then(userData.logOut)
+            .catch(history.push('/'));
     }
     const returnToPageHandler = (e) => {
         e.preventDefault()
-        console.log(history);
         history.goBack();
     }
     return (
