@@ -1,10 +1,11 @@
 import { Fragment, useState } from 'react';
+import cloudinaryAPI from '../../../../services/coludinary';
 
 import style from './TorrentFile.module.css';
 import ErrorMessage from '../../../common/ErrorMessage';
 import { error } from '../../../../utils/messages';
 
-const TorrentFile = ({ setFile }) => {
+const TorrentFile = ({ setFile, setUploadBtn }) => {
 
     const [isValid, setIsValid] = useState(true);
 
@@ -12,12 +13,16 @@ const TorrentFile = ({ setFile }) => {
         if (e.target.files[0].size > 1e6) {
             e.target.value = "";
             setIsValid(false);
-            return;
         }
         setIsValid(true);
-        const apended = new FormData()
-        apended.append("torrent", e.target.files[0], e.target.files[0].name);
-        setFile(apended);
+        const form = new FormData()
+        form.append("file", e.target.files[0], e.target.files[0].name);
+        form.append("upload_preset", "ml_default");
+                cloudinaryAPI.cloudinaryUpload(form)
+                    .then(res => res.json())
+                    .then(res => { setFile(res.url); return res})
+                    .then(res => setUploadBtn(false))
+                    .catch(console.log)
     }
     return (
         <Fragment>

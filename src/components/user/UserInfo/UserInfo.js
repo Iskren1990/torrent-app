@@ -7,7 +7,6 @@ import spaceLeader from '../../../assets/space-leader.svg';
 import SubmitBtn from '../../common/SubmitBtn';
 import ScreenshotsUpload from '../../common/ScreenshotsUpload';
 
-
 import UserService from '../UserSrevice';
 
 const UserInfo = (userData) => {
@@ -18,6 +17,7 @@ const UserInfo = (userData) => {
     const [age, setAge] = useState(userData.age);
     const [avatar, setAvatar] = useState(userData.avatar);
     const [isNotEdditable, setIsNotEdditable] = useState(true);
+    const [disabled, disableSave] = useState(false);
 
     const editBtnHandler = (e) => {
         setIsNotEdditable(!isNotEdditable);
@@ -37,8 +37,9 @@ const UserInfo = (userData) => {
             {
                 isNotEdditable
                 || <ScreenshotsUpload
-                    setPicUrls={e => setAvatar(e)}
+                    setPicUrls={picUrlArr => setAvatar(...picUrlArr)}
                     single={false}
+                    setUploadBtn={bool => disableSave(bool)}
                 />
             }
             <CommonInput
@@ -68,7 +69,7 @@ const UserInfo = (userData) => {
                 type={"button"}
                 onClick={(e) => editBtnHandler(e)}
             />
-            {isNotEdditable || <SubmitBtn value={"Save"} />}
+            {isNotEdditable || <SubmitBtn disabled={disabled} value={"Save"} />}
         </form>
     );
 }

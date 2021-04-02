@@ -1,154 +1,27 @@
-[
-    {
-        "asset_id": "b3abee3495340e16d902686a274f16d0",
-        "public_id": "docs_uploading_example/2_sst1lv",
-        "version": 1617277274,
-        "version_id": "fe0818e81548b42d1f3e5601f7b10819",
-        "signature": "d002998ac11e0239faa2929be822e24a41820914",
-        "width": 600,
-        "height": 467,
-        "format": "jpg",
-        "resource_type": "image",
-        "created_at": "2021-04-01T11:41:14Z",
-        "tags": [],
-        "pages": 1,
-        "bytes": 99109,
-        "type": "upload",
-        "etag": "c21ed3ee7b916731b667d2aa20d8b5cd",
-        "placeholder": false,
-        "url": "http://res.cloudinary.com/demo/image/upload/v1617277274/docs_uploading_example/2_sst1lv.jpg",
-        "secure_url": "https://res.cloudinary.com/demo/image/upload/v1617277274/docs_uploading_example/2_sst1lv.jpg",
-        "access_mode": "public",
-        "context": {},
-        "metadata": {
-            "color_id": [
-                "color1",
-                "color2"
-            ],
-            "colors_id": [
-                "color1",
-                "color2"
-            ],
-            "g0btpgkczvarsmkwli2e": [
-                "ojnfizxyivpox6opxspo"
-            ],
-            "s81oevuzdbvdqq8i6voe": "demo"
-        },
-        "existing": false,
-        "original_filename": "2"
-    },
-    {
-        "asset_id": "cbda4ec6fd3566c60561747e5ded2c9d",
-        "public_id": "docs_uploading_example/320px-Vroom_Hendrick_Cornelisz_Dutch_Ships_Ramming_Spanish_Galleys_off_the_Flemish_Coast_in_October_1602_qhccm5",
-        "version": 1617277483,
-        "version_id": "4588f5b87a7cb1ed116fb35e8489f710",
-        "signature": "bf08a9d584e3c16fee56cdf9165ad26607008287",
-        "width": 320,
-        "height": 249,
-        "format": "jpg",
-        "resource_type": "image",
-        "created_at": "2021-04-01T11:44:43Z",
-        "tags": [],
-        "pages": 1,
-        "bytes": 22390,
-        "type": "upload",
-        "etag": "b13e3dd40fdeefffe8cbb2848336bf46",
-        "placeholder": false,
-        "url": "http://res.cloudinary.com/demo/image/upload/v1617277483/docs_uploading_example/320px-Vroom_Hendrick_Cornelisz_Dutch_Ships_Ramming_Spanish_Galleys_off_the_Flemish_Coast_in_October_1602_qhccm5.jpg",
-        "secure_url": "https://res.cloudinary.com/demo/image/upload/v1617277483/docs_uploading_example/320px-Vroom_Hendrick_Cornelisz_Dutch_Ships_Ramming_Spanish_Galleys_off_the_Flemish_Coast_in_October_1602_qhccm5.jpg",
-        "access_mode": "public",
-        "context": {},
-        "metadata": {
-            "color_id": [
-                "color1",
-                "color2"
-            ],
-            "colors_id": [
-                "color1",
-                "color2"
-            ],
-            "g0btpgkczvarsmkwli2e": [
-                "ojnfizxyivpox6opxspo"
-            ],
-            "s81oevuzdbvdqq8i6voe": "demo"
-        },
-        "existing": false,
-        "original_filename": "320px-Vroom_Hendrick_Cornelisz_Dutch_Ships_Ramming_Spanish_Galleys_off_the_Flemish_Coast_in_October_1602"
-    },
-    {
-        "asset_id": "1b0797e271705ca2505de7b46d0b7ca7",
-        "public_id": "docs_uploading_example/300px-Turner__The_Battle_of_Trafalgar__1806_ocg4ic",
-        "version": 1617277483,
-        "version_id": "4588f5b87a7cb1ed116fb35e8489f710",
-        "signature": "c8745579c02d15e879a2e2c167b949d5958d6847",
-        "width": 300,
-        "height": 217,
-        "format": "jpg",
-        "resource_type": "image",
-        "created_at": "2021-04-01T11:44:43Z",
-        "tags": [],
-        "pages": 1,
-        "bytes": 24250,
-        "type": "upload",
-        "etag": "692d63864f5777a404a26dbccc54ab0b",
-        "placeholder": false,
-        "url": "http://res.cloudinary.com/demo/image/upload/v1617277483/docs_uploading_example/300px-Turner__The_Battle_of_Trafalgar__1806_ocg4ic.jpg",
-        "secure_url": "https://res.cloudinary.com/demo/image/upload/v1617277483/docs_uploading_example/300px-Turner__The_Battle_of_Trafalgar__1806_ocg4ic.jpg",
-        "access_mode": "public",
-        "context": {},
-        "metadata": {
-            "color_id": [
-                "color1",
-                "color2"
-            ],
-            "colors_id": [
-                "color1",
-                "color2"
-            ],
-            "g0btpgkczvarsmkwli2e": [
-                "ojnfizxyivpox6opxspo"
-            ],
-            "s81oevuzdbvdqq8i6voe": "demo"
-        },
-        "existing": false,
-        "original_filename": "300px-Turner,_The_Battle_of_Trafalgar_(1806)"
-    },
-    {
-        "asset_id": "6a95c21613165e7140115a352780d59e",
-        "public_id": "docs_uploading_example/2_am0myf",
-        "version": 1617277483,
-        "version_id": "4588f5b87a7cb1ed116fb35e8489f710",
-        "signature": "6ded361779592dfe041f2e4d7fe7d0a9f74a8b31",
-        "width": 600,
-        "height": 467,
-        "format": "jpg",
-        "resource_type": "image",
-        "created_at": "2021-04-01T11:44:43Z",
-        "tags": [],
-        "pages": 1,
-        "bytes": 99109,
-        "type": "upload",
-        "etag": "c21ed3ee7b916731b667d2aa20d8b5cd",
-        "placeholder": false,
-        "url": "http://res.cloudinary.com/demo/image/upload/v1617277483/docs_uploading_example/2_am0myf.jpg",
-        "secure_url": "https://res.cloudinary.com/demo/image/upload/v1617277483/docs_uploading_example/2_am0myf.jpg",
-        "access_mode": "public",
-        "context": {},
-        "metadata": {
-            "color_id": [
-                "color1",
-                "color2"
-            ],
-            "colors_id": [
-                "color1",
-                "color2"
-            ],
-            "g0btpgkczvarsmkwli2e": [
-                "ojnfizxyivpox6opxspo"
-            ],
-            "s81oevuzdbvdqq8i6voe": "demo"
-        },
-        "existing": false,
-        "original_filename": "2"
-    }
-]
+actors: "Jared Leto, Henry Cavill, Amber Heard, Gal Gadot"​
+category: "movies"
+​country: "USA"
+​description: "Zack Snyder's definitive director's cut of Justice League. Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions."
+​director: "Zack Snyder"
+​genre: "Action, Adventure, Fantasy, Sci-Fi"
+​imdbID: "tt12361974"
+​imdbRating: "N/A"
+​language: "English"
+​picUrls: 
+​0: "http://res.cloudinary.com/allmighty/image/upload/v1617371488…ish_Galleys_off_the_Flemish_Coast_in_October_1602_rkdv5c.jpg"
+​​1: "http://res.cloudinary.com/allmighty/image/upload/v1617371556/2_cfupsj.jpg"
+​​2: "http://res.cloudinary.com/allmighty/image/upload/v1617371565/2_v7gpp8.jpg"
+​​3: "http://res.cloudinary.com/allmighty/image/upload/v1617371574/2_wr2dvt.jpg"
+​​4: "http://res.cloudinary.com/allmighty/image/upload/v1617371820…ish_Galleys_off_the_Flemish_Coast_in_October_1602_vdbdre.jpg"
+​​5: "http://res.cloudinary.com/allmighty/image/upload/v1617371873/2_krpcrg.jpg"
+​​6: "http://res.cloudinary.com/allmighty/image/upload/v1617371954/2_bhbs14.jpg"
+​​plot: "Zack Snyder's definitive director's cut of Justice League. Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions."
+​poster: "https://m.media-amazon.com/images/M/MV5BYjI3NDg0ZTEtMDEwYS00…ktMTNlM2NmYjc1OGRiXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg"
+​released: "18 Mar 2021"
+​runtime: "240 min"
+​title: "asddsa"
+​torrentUrl: "http://res.cloudinary.com/allmighty/raw/upload/v1617371731/Z…yders.Justice.League.2021.WEBRip.x264.AAC-HUD_ay3i2k.torrent"
+​year: "2021"
+​
+
+

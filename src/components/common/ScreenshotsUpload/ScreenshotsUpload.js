@@ -1,21 +1,22 @@
 import CommonInputFile from '../CommonInputFile';
 import cloudinaryAPI from '../../../services/coludinary';
 
-const ScreenshotsUpload = ({ setPicUrls, single }) => {
+const ScreenshotsUpload = ({ setPicUrls, single, setUploadBtn }) => {
 
     const loadFile = (event) => {
+        const urlArr = [];
 
-        const urls = [...event.target.files]
-            .map((_, i) => URL.createObjectURL(event.target.files[i]));
-        setPicUrls(urls);
         [...event.target.files]
-            .forEach((pic) => {
+            .forEach((pic, i) => {
+                setUploadBtn(true)
                 const form = new FormData();
                 form.append("file", pic, pic.name);
                 form.append("upload_preset", "ml_default");
                 cloudinaryAPI.cloudinaryUpload(form)
                     .then(res => res.json())
-                    .then(res => { setPicUrls(res.url) })
+                    .then(res => urlArr.push(res.url))
+                    .then(ews => {if(i === event.target.files.length - 1 ) setPicUrls(urlArr)})
+                    .then(res => setUploadBtn(false))
                     .catch(console.log)
             });
     };
