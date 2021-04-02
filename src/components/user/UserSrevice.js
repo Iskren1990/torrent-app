@@ -33,6 +33,17 @@ const UserService = {
         })
             .then(res => res.json());
     },
+    editProfile: (userData) => {
+        return fetch(`${url}/profile/edit`, {
+            method: "PUT",
+            credentials: "include",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+            .then(res => res.json());
+    },
     logout: () => {
         return fetch(`${url}/logout`, {credentials: "include"})
             .then(res => res.json());

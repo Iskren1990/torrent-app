@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import UserService from './components/user/UserSrevice';
 import UserContextStore from './UserContextStore';
 import LoadingBar from './components/common/LoadingBar';
@@ -8,13 +8,19 @@ const UserContext = (props) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
+    const updateUserInfo = useCallback(() => {
         UserService.profile()
-            .then(userData => 
-                !userData.err 
-                ? logIn(userData) 
-                : setLoading(false))
+            .then(userData =>
+                !userData.err
+                    ? logIn(userData)
+                    : setLoading(false)
+            ).catch(console.log)
     }, []);
+
+
+    useEffect(() => {
+        updateUserInfo();
+    }, [updateUserInfo]);
 
 
     const logIn = (user) => {
@@ -27,6 +33,7 @@ const UserContext = (props) => {
         setLoading(false)
     }
 
+
     if (loading) {
         return <LoadingBar />
     }
@@ -36,6 +43,7 @@ const UserContext = (props) => {
             ...user,
             logIn,
             logOut,
+            updateUserInfo,
             loading
         }}>
             {props.children}

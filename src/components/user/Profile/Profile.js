@@ -11,7 +11,6 @@ const Profile = () => {
     return (
         <div className={style.Wrapper}>
             <UserInfo userData={userData} ></UserInfo>
-
         </div>
     );
 }

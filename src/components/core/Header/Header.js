@@ -7,6 +7,7 @@ import CommonImage from '../../common/CommonImage';
 
 const Header = () => {
     const userData = useContext(UserContextStore);
+
     return (
         <header className={styles.Header}>
             <div className={styles.logo}>
@@ -32,11 +33,15 @@ const Header = () => {
             <div className={styles.profile}>
                 <Link to={navData.userProfile.path}>
                     <strong>{userData.username || ""}</strong>
-                        {
-                            userData.avatar 
-                            ? <CommonImage src={userData.avatar} alt="Profile Pic" style={styles.Avatar} />
+                    {
+                        userData.avatar
+                            ? <CommonImage
+                                src={userData.avatar}
+                                alt="Profile Pic"
+                                style={styles.Avatar}
+                            />
                             : <i className="fas fa-user-astronaut"></i>
-                        }
+                    }
                 </Link>
             </div>
         </header>

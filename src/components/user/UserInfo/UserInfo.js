@@ -7,14 +7,17 @@ import spaceLeader from '../../../assets/space-leader.svg';
 import SubmitBtn from '../../common/SubmitBtn';
 import ScreenshotsUpload from '../../common/ScreenshotsUpload';
 
+
+import UserService from '../UserSrevice';
+
 const UserInfo = (userData) => {
-    userData = {...userData.userData}
+    userData = { ...userData.userData }
+
     const [username, setUsername] = useState(userData.username);
     const [email, setEmail] = useState(userData.email);
     const [age, setAge] = useState(userData.age);
-    const [picUrls, setPicUrls] = useState(userData.avatar || spaceLeader);
+    const [avatar, setAvatar] = useState(userData.avatar);
     const [isNotEdditable, setIsNotEdditable] = useState(true);
-    const [screenshotsFile, setScreenshotsFile] = useState({})
 
     const editBtnHandler = (e) => {
         setIsNotEdditable(!isNotEdditable);
@@ -22,16 +25,20 @@ const UserInfo = (userData) => {
 
     const editInfoSubmitHandler = (e) => {
         e.preventDefault();
+        UserService.editProfile({ username, email, age, avatar })
+            .then(setIsNotEdditable(true))
+            .then(userData.updateUserInfo())
+            .catch(console.log)
     }
-    
+
     return (
         <form onSubmit={editInfoSubmitHandler}>
-            <CommonImage src={picUrls} style={style.Img} alt={"User Picture"} />
+            <CommonImage src={avatar} style={style.Img} alt={"User Picture"} fallback={() => setAvatar(spaceLeader)} />
             {
                 isNotEdditable
                 || <ScreenshotsUpload
-                    setPicUrls={e => setPicUrls(e)}
-                    setPicsForUpload={e => setScreenshotsFile(e)}
+                    setPicUrls={e => setAvatar(e)}
+                    single={false}
                 />
             }
             <CommonInput
