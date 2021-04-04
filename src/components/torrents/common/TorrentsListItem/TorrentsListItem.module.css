@@ -1,0 +1,42 @@
+.Item a {
+    display: block;
+    background: rgb(40, 44, 52);
+}
+
+.Img {
+    width: 100px;
+    height: 150px;
+    object-fit: contain;
+    position: absolute;
+}
+
+.serial,
+.movie,
+.game,
+.book,
+.music {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin: auto;
+}
+
+.serial{
+    content: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZzTaP0Bo09Eyt-CdKswDWPV_aOXdd8pl9vGz5kjso8cKlkrzJ4lwOUu9CgsflyGy72x4YSlBNMU&usqp=CAU");
+}
+
+.movie {
+    content: url("https://media.gettyimages.com/vectors/movies-flat-design-arts-icon-with-side-shadow-vector-id958633614?s=612x612");
+}
+
+.game {
+    content: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvlvXVeLw-ZuyuG3F-Nu_ndpho9qAGIW8n2t9BPGJprJDencNi6deegD6YaIUyriMOyeN-ZpoamYo&usqp=CAU");
+}
+
+.book {
+    content: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhCU74SdQk1Rg2iNZzKTXvAAFvSrRCcDW48N30jVrDRCByuBilKEwqM8mwPeb6A2WEU1NqK6pGJyw&usqp=CAU");
+}
+
+.music {
+    content: url("https://images.macrumors.com/t/tCPS-yWwAQ_siFOl14cUWLHEw1c=/400x0/filters:quality(90)/article-new/2018/05/apple-music-note-800x420.jpg?lossy");
+}

@@ -10,6 +10,15 @@ const TorrentService = {
             },
             body: JSON.stringify(torrentData)
         }).then(res => res.json());
+    },
+    get: (query, page=1) => {
+        return fetch(`${url}/list?${query}`, {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json());
     }
 }
 

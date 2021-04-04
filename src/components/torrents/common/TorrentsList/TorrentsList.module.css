@@ -1,0 +1,23 @@
+.TorrentList {
+    padding: 20px;
+    flex: 1 1 80%;
+    text-align: center;
+}
+
+.TorrentList>h1 {
+    font-size: 1.3rem;
+    padding: 10px;
+}
+
+.TorrentList table {
+    width: 100%;
+    border-collapse: collapse;    
+}
+
+.TorrentList tr:hover {
+    
+}
+
+.TorrentList td {
+    border: 2px solid rgba(190, 189, 189, 0.4);;
+}

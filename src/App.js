@@ -26,6 +26,10 @@ function App() {
                 ></Route>
               )
           }
+          <Route
+            path="/torrents/:id"
+            component={Footer}
+          ></Route>
         </Switch>
       </main>
       <Footer></Footer>

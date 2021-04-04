@@ -4,7 +4,7 @@ import Register from '../components/user/Register';
 import Login from '../components/user/Login';
 import Profile from '../components/user/Profile';
 import Logout from '../components/user/Logout';
-
+import Torrents from '../components/torrents/Torrents';
 
 const navData = {
     home: {
@@ -18,15 +18,14 @@ const navData = {
         component: Profile
     },
     torrents: {
-        path: "/torrents",
+        path: "/torrents/list",
         title: "Torrents",
-        component: Home
+        component: Torrents
     },
     uploadTorrent: {
         path: "/torrents/upload",
         title: "Upload",
         component: UploadTorrent
-        //todo
     },
     userLogin: {
         path: "/user/login",
@@ -37,7 +36,6 @@ const navData = {
         path: "/user/logout",
         title: "Logout",
         component: Logout
-        //todo
     },
     userRegister: {
         path: "/user/register",
