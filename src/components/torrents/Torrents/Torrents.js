@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import ReactPaginate from 'react-paginate';
 import style from './Torrents.module.css';
 import TorrentsList from '../common/TorrentsList';
 import TorrentService from '../../../services/torrents';
+import Paginator from '../../common/Paginator';
 
 const Torrents = ({ history }) => {
     const [topTenDownloaded, setTopTenDownloaded] = useState([]);
@@ -32,18 +32,7 @@ const Torrents = ({ history }) => {
                 page === 0 && <TorrentsList torrentsArr={topTenDownloaded} heading={"Top 10 Downloaded"} />
             }
             <TorrentsList torrentsArr={allTorrentsLit} heading={"Latest Uploaded Torrents"} />
-            <ReactPaginate
-                previousLabel={'previous'}
-                nextLabel={'next'}
-                breakLabel={'...'}
-                breakClassName={'break-me'}
-                pageCount={20}
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={5}
-                onPageChange={e => handleClick(e.selected)}
-                containerClassName={style.Paginate}
-                activeClassName={style.Active}
-            />
+            <Paginator onPageChange={e => handleClick(e.selected)} />
         </div>
     );
 }

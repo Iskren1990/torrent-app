@@ -32,7 +32,7 @@ const UserInfo = (userData) => {
     }
 
     return (
-        <form onSubmit={editInfoSubmitHandler}>
+        <form className={style.UserData} onSubmit={editInfoSubmitHandler}>
             <CommonImage src={avatar} style={style.Img} alt={"User Picture"} fallback={() => setAvatar(spaceLeader)} />
             {
                 isNotEdditable

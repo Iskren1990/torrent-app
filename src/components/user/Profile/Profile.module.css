@@ -1,3 +1,5 @@
 .Wrapper {
     margin: auto;
+    display: flex;
+    flex-flow: column;
 }

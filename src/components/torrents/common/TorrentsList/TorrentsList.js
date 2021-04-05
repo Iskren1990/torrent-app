@@ -1,10 +1,11 @@
 import style from './TorrentsList.module.css';
 import TorrentsListItem from '../TorrentsListItem';
+import CommonTitle from '../../../common/CommonTitle'
 
 const TorrentsList = ({ torrentsArr, heading }) => {
     return (
         <section className={style.TorrentList}>
-            <h1>{heading}</h1>
+            <CommonTitle title={heading} />
             <table>
                 <thead>
                     <tr>
