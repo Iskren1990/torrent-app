@@ -1,0 +1,29 @@
+.Torrent {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 5px solid rgba(190, 189, 189, 0.4);
+    border-radius: 2px;
+    padding: 10px 20px;
+    max-width: 80%;
+}
+
+.DownloadBtn {
+    flex: 100%;
+}
+
+.Delete {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 31, 31);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin: 20px;
+}
+
+.Delete:hover {
+    background-color: rgb(255, 31, 31);
+    color: rgb(40, 44, 52);
+}

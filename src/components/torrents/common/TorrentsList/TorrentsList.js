@@ -18,7 +18,10 @@ const TorrentsList = ({ torrentsArr, heading }) => {
                 <tbody>
                     {
                         torrentsArr.map((torrentItem) =>
-                            <TorrentsListItem key={torrentItem._id} torrentItem={torrentItem} />
+                            <TorrentsListItem
+                                key={torrentItem._id}
+                                torrentItem={torrentItem}
+                            />
                         )
                     }
                 </tbody>

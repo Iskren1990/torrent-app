@@ -1,4 +1,5 @@
 function torrentDataModel(data) {
+    if (!data) return;
     return {
         "Year": data.year,
         "Released": data.released,

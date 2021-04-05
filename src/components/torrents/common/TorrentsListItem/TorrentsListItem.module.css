@@ -11,7 +11,7 @@
 }
 
 .serial,
-.movie,
+.movies,
 .game,
 .book,
 .music {
@@ -25,7 +25,7 @@
     content: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZzTaP0Bo09Eyt-CdKswDWPV_aOXdd8pl9vGz5kjso8cKlkrzJ4lwOUu9CgsflyGy72x4YSlBNMU&usqp=CAU");
 }
 
-.movie {
+.movies {
     content: url("https://media.gettyimages.com/vectors/movies-flat-design-arts-icon-with-side-shadow-vector-id958633614?s=612x612");
 }
 

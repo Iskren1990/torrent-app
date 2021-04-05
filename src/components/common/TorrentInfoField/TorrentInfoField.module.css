@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex: 1 1 100%;
+    flex: 1 1 80%;
     border-bottom: 2px solid rgb(128, 128, 128);
     margin-bottom: 20px;
 }

@@ -1,6 +1,7 @@
 .TorrentList {
+    width: 60vw;
     padding: 20px;
-    flex: 1 1 80%;
+    flex: 1 0 90%;
     text-align: center;
 }
 
@@ -12,10 +13,6 @@
 .TorrentList table {
     width: 100%;
     border-collapse: collapse;    
-}
-
-.TorrentList tr:hover {
-    
 }
 
 .TorrentList td {

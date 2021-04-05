@@ -4,3 +4,32 @@
     justify-content: center;
     margin: auto;
 }
+
+.Paginate {
+    flex: 1 0 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.Paginate>* {
+    border-radius: 2px;
+    border: 1px solid rgb(83, 255, 31);
+    margin: 2px;
+    
+}
+
+.Paginate a {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.Active,
+.Paginate>*:hover {
+    background: rgb(83, 255, 31);
+    
+}
+
+.Active a,
+.Paginate a:hover {
+    color: rgb(40, 44, 52);
+}

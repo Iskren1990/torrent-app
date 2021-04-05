@@ -1,11 +1,12 @@
 // import { useContext } from 'react';
+import { Switch, Route } from "react-router-dom";
 
 import styles from './App.module.css';
 import Header from './components/core/Header';
 import Footer from './components/core/Footer';
 import Home from './components/core/Home';
-import { Switch, Route } from "react-router-dom";
 import navData from './utils/navigation';
+import Torrent from './components/torrents/Torrent';
 
 function App() {
 
@@ -27,8 +28,12 @@ function App() {
               )
           }
           <Route
+            path="/torrents/list"
+            component={navData["torrents"].component}
+          ></Route>
+          <Route
             path="/torrents/:id"
-            component={Footer}
+            component={Torrent}
           ></Route>
         </Switch>
       </main>

@@ -11,9 +11,36 @@ const TorrentService = {
             body: JSON.stringify(torrentData)
         }).then(res => res.json());
     },
-    get: (query, page=1) => {
+    get: (query) => {
         return fetch(`${url}/list?${query}`, {
             method: "GET",
+            credentials: "include",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json());
+    },
+    getOne: (query) => {
+        return fetch(`${url}/${query}`, {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json());
+    },
+    increaseDownload: (torrentId) => {
+        return fetch(`${url}/${torrentId}`, {
+            method: "PUT",
+            credentials: "include",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json());
+    },
+    delete: (id) => {
+        return fetch(`${url}/${id}`, {
+            method: "DELETE",
             credentials: "include",
             headers: {
                 'Content-Type': 'application/json'

@@ -4,7 +4,6 @@ import style from './TorrentsListItem.module.css';
 import CommonImage from '../../../common/CommonImage';
 
 const TorrentsListItem = ({ torrentItem }) => {
-
     const [isHovered, setIsHovered] = useState(false);
     const { title, imdbRating, createdTime, downloads } = torrentItem;
 
@@ -24,13 +23,13 @@ const TorrentsListItem = ({ torrentItem }) => {
                 <td >
                     <Link
                         className={style[torrentItem.category]}
-                        to={`/torrents/${torrentItem._id}`}
+                        to={`/torrents/${torrentItem._id}?category=${torrentItem.category}`}
                     />
                 </td>
                 {
                     [title, imdbRating, createdTime, downloads].map(item =>
                         <td key={item}>
-                            <Link to={`/torrents/${torrentItem._id}`} >
+                            <Link to={`/torrents/${torrentItem._id}?category=${torrentItem.category}`} >
                                 {item}
                             </Link>
                         </td>

@@ -1,9 +1,9 @@
 import style from './SubmitBtn.module.css';
 
-const SubmitBtn = ({ value, type, onClick, disabled }) => {
+const SubmitBtn = ({ value, type, onClick, disabled, styles }) => {
     return (
         <input
-            className={style.Submit}
+            className={styles || style.Submit}
             type={type || "submit"}
             value={value}
             onClick={onClick}

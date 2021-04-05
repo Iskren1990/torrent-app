@@ -22,15 +22,15 @@ const UploadTorrent = (props) => {
     const [torrentUrl, setTorrentUrl] = useState("");
     const [picUrls, setPicUrls] = useState([]);
 
-    
+
     useEffect(() => {
         if (!!movieId === false) return null;
         imdbApi.getOne(movieId)
-        .then(x => setMovieData(torrentModel(x)))
-        .catch(x => console.log("BE error popup here", x));
+            .then(x => setMovieData(torrentModel(x)))
+            .catch(x => console.log("BE error popup here", x));
     }, [movieId]);
-    
-    const multiplePicUrl = url =>  {setPicUrls(url); console.log("url", url)};
+
+    const multiplePicUrl = url => { setPicUrls(url); console.log("url", url) };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -57,20 +57,15 @@ const UploadTorrent = (props) => {
             <TorrentName />
             <TorrentTypeInput {...movieData} />
             <TorrentImdbLink setMovieId={setMovieId} />
-            { movieData.imdbID && <MovieInfoWrapper
-                style={{
-                    MovieInfo: style.MovieInfo,
-                    MovieInfoWrapper: style.MovieInfoWrapper,
-                    Img: style.Image
-                }}
-                movieData={movieData}
-            />}
+            {
+                movieData.imdbID && <MovieInfoWrapper movieData={movieData} />
+            }
             <DescriptionField lebel={"Plot"} text={movieData.plot} readonly={true} />
-            <TorrentFile setFile={setTorrentUrl} setUploadBtn={e => {}} />
+            <TorrentFile setFile={setTorrentUrl} setUploadBtn={e => { }} />
             {/* Block upload Btn untill files upload  setUploadBtn() */}
-            <ScreenshotsUpload setPicUrls={multiplePicUrl} setUploadBtn={() => {}} />
+            <ScreenshotsUpload setPicUrls={multiplePicUrl} setUploadBtn={() => { }} />
             <ScreenshotsSection picUrls={picUrls} />
-            <SubmitBtn value={"Upload"} setUploadBtn={() => {}} />
+            <SubmitBtn value={"Upload"} setUploadBtn={() => { }} />
         </form>
     );
 }
