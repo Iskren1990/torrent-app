@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import TosterContextStore from '../../../TosterContextStore'
+import fieldValidator from '../../../utils/fieldValidation';
 
 import style from './UserInfo.module.css';
 import CommonImage from '../../common/CommonImage';
@@ -12,6 +14,7 @@ import UserService from '../UserSrevice';
 const UserInfo = (userData) => {
     userData = { ...userData.userData }
 
+    const { setToastrMsg } = useContext(TosterContextStore);
     const [username, setUsername] = useState(userData.username);
     const [email, setEmail] = useState(userData.email);
     const [age, setAge] = useState(userData.age);
@@ -25,10 +28,18 @@ const UserInfo = (userData) => {
 
     const editInfoSubmitHandler = (e) => {
         e.preventDefault();
+
+        const [err, errCont] = fieldValidator({ username, email, age, avatar });
+        if (err) return setToastrMsg(errCont);
+
         UserService.editProfile({ username, email, age, avatar })
             .then(setIsNotEdditable(true))
             .then(userData.updateUserInfo())
-            .catch(console.log)
+            .then(res => {
+                if (res.message) throw new Error(res.message);
+                userData.logIn(res)
+            })
+            .catch(x => setToastrMsg(x.message));
     }
 
     return (

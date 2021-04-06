@@ -5,14 +5,17 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import UserContext from './UserContext';
+import TosterContext from './TosterContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserContext>
-      <Router>
-        <App />
-      </Router>
-    </UserContext>
+    <TosterContext>
+      <UserContext>
+        <Router>
+          <App />
+        </Router>
+      </UserContext>
+    </TosterContext>
   </React.StrictMode>,
   document.getElementById('root')
 );

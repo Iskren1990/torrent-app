@@ -15,7 +15,7 @@ const ScreenshotsUpload = ({ setPicUrls, single, setUploadBtn }) => {
                 cloudinaryAPI.cloudinaryUpload(form)
                     .then(res => res.json())
                     .then(res => urlArr.push(res.url))
-                    .then(ews => {if(i === event.target.files.length - 1 ) setPicUrls(urlArr)})
+                    .then(ews =>  (i === event.target.files.length - 1 ) && setPicUrls(urlArr))
                     .then(res => setUploadBtn(false))
                     .catch(console.log)
             });

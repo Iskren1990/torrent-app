@@ -5,6 +5,7 @@ import Login from '../components/user/Login';
 import Profile from '../components/user/Profile';
 import Logout from '../components/user/Logout';
 import Torrents from '../components/torrents/Torrents';
+import Torrent from '../components/torrents/Torrent';
 
 const navData = {
     home: {
@@ -41,6 +42,10 @@ const navData = {
         path: "/user/register",
         title: "Register",
         component: Register
+    },
+    torrent: {
+        path:"/torrents/:id",
+        component: Torrent
     }
 }
 

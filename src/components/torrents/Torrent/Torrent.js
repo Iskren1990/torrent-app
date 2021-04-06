@@ -43,7 +43,7 @@ const Torrent = ({ history, match }) => {
                 <CommonTitle title={torrentData.title} />
                 <Video videoId={movieData.videoId} />
                 <MovieInfoWrapper movieData={movieData} />
-                <DescriptionField lebel={"Plot"} text={movieData.plot} readonly={false} />
+                <DescriptionField lebel={"Plot"} text={movieData.plot} />
                 <ScreenshotsSection picUrls={movieData.picUrls} />
                 <Link className={style.DownloadBtn} to={{ pathname: movieData.torrentUrl }} target="_blank">
                     <SubmitBtn onClick={e => downloadClickHandler(e)} value="Download" />

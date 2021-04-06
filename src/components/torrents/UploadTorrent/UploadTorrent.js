@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 import imdbApi from '../services/imdbApi';
 import torrentModel from '../utils/torentModel';
+import TosterContextStore from '../../../TosterContextStore';
+import fieldValidator from '../../../utils/fieldValidation';
 
 import style from './UploadTorrent.module.css';
 import TorrentTypeInput from './TorrentTypeInput';
@@ -14,6 +16,7 @@ import SubmitBtn from '../../common/SubmitBtn';
 import DescriptionField from '../../common/DescriptionField';
 import ScreenshotsSection from '../../common/ScreenshotsSection';
 import TorrentService from '../../../services/torrents';
+import CommonTitle from '../../common/CommonTitle';
 
 const UploadTorrent = (props) => {
 
@@ -21,7 +24,8 @@ const UploadTorrent = (props) => {
     const [movieData, setMovieData] = useState({});
     const [torrentUrl, setTorrentUrl] = useState("");
     const [picUrls, setPicUrls] = useState([]);
-
+    const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
+    const { setToastrMsg } = useContext(TosterContextStore);
 
     useEffect(() => {
         if (!!movieId === false) return null;
@@ -30,7 +34,7 @@ const UploadTorrent = (props) => {
             .catch(x => console.log("BE error popup here", x));
     }, [movieId]);
 
-    const multiplePicUrl = url => { setPicUrls(url); console.log("url", url) };
+    const multiplePicUrl = url => setPicUrls(url);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -43,29 +47,27 @@ const UploadTorrent = (props) => {
             torrentUrl,
             picUrls
         }
-        const emptyFieldValidation = Object.keys(torrentData).some(x => torrentData[x] === "");
-        if (!emptyFieldValidation) {
-            TorrentService.upload(torrentData).then(console.log).catch(console.log)
-        } else {
-            console.log("Field $ {name} is required");
-        }
+        const [err, errCont] = fieldValidator(torrentData);
+        if (err) return setToastrMsg(errCont);
+
+        TorrentService.upload(torrentData)
+            .then(res => props.history.push(`/torrents/${res._id}?category=${res.category}`))
+            .catch(console.log);
     }
 
     return (
         <form className={style.UploadTorrent} onSubmit={handleSubmit} >
-            <h3 className={style.title}>Upload Torrent</h3>
+            <CommonTitle styles={style.title} title={"Upload Torrent"} />
             <TorrentName />
             <TorrentTypeInput {...movieData} />
             <TorrentImdbLink setMovieId={setMovieId} />
-            {
-                movieData.imdbID && <MovieInfoWrapper movieData={movieData} />
-            }
+            { movieData.imdbID 
+            && <MovieInfoWrapper movieData={movieData} /> }
             <DescriptionField lebel={"Plot"} text={movieData.plot} readonly={true} />
-            <TorrentFile setFile={setTorrentUrl} setUploadBtn={e => { }} />
-            {/* Block upload Btn untill files upload  setUploadBtn() */}
-            <ScreenshotsUpload setPicUrls={multiplePicUrl} setUploadBtn={() => { }} />
+            <TorrentFile setFile={setTorrentUrl} setUploadBtn={e => setIsSubmitDisabled()} />
+            <ScreenshotsUpload setPicUrls={multiplePicUrl} setUploadBtn={e => setIsSubmitDisabled} />
             <ScreenshotsSection picUrls={picUrls} />
-            <SubmitBtn value={"Upload"} setUploadBtn={() => { }} />
+            <SubmitBtn value={"Upload"} disabled={isSubmitDisabled} />
         </form>
     );
 }

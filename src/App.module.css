@@ -26,6 +26,26 @@
   display: flex;
 }
 
+.NotifyItem {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(203, 100, 94, 0.8);
+  border-radius: 5px;
+  color: #FFF;
+  width: 300px;
+  margin: 5px 10px;
 
+}
 
+.NotifyItem:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 10px 0 rgb(15, 15, 15);
+}
 
