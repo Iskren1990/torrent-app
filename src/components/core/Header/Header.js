@@ -1,12 +1,13 @@
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
-import navData from '../../../utils/navigation';
+import NavData from '../../../utils/navigation';
 import { useContext } from 'react';
 import UserContextStore from '../../../UserContextStore';
 import CommonImage from '../../common/CommonImage';
 
 const Header = () => {
     const userData = useContext(UserContextStore);
+    const navData = NavData(userData);
 
     return (
         <header className={styles.Header}>
@@ -31,10 +32,10 @@ const Header = () => {
                 </ul>
             </div>
             <div className={styles.profile}>
-                <Link to={navData.userProfile.path}>
+                <Link to={navData.userProfile?.path || "/"}>
                     <strong>{userData.username || ""}</strong>
                     {
-                        userData.avatar
+                        userData?.avatar
                             ? <CommonImage
                                 src={userData.avatar}
                                 alt="Profile Pic"

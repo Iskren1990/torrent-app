@@ -2,20 +2,24 @@ import { useContext, useEffect, useRef } from 'react';
 import { Switch, Route } from "react-router-dom";
 import ReactNotify from 'react-notify';
 import TosterContextStore from './TosterContextStore';
+import UserContextStore from './UserContextStore';
 
 import styles from './App.module.css';
 import Header from './components/core/Header';
 import Footer from './components/core/Footer';
 import Home from './components/core/Home';
-import navData from './utils/navigation';
+import NavData from './utils/navigation';
 
 function App() {
+
+  const userData = useContext(UserContextStore);
   const { msg } = useContext(TosterContextStore);
   const msgCont = useRef(null);
   useEffect(() => {
     msgCont.current.error("", msg, 4000)
   }, [msg])
 
+  const navData = NavData(userData);
   return (
     <div className={styles.App}>
       <div className={styles.NotifyItem}>

@@ -5,7 +5,7 @@ import LoadingBar from './components/common/LoadingBar';
 
 const UserContext = (props) => {
 
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({ isLogged: false });
     const [loading, setLoading] = useState(true);
 
     const updateUserInfo = useCallback(() => {
