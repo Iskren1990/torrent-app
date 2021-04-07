@@ -1,8 +1,8 @@
-import { newsApiUrl, newsApiKey } from '../config/environment';
+import { serverUrl } from '../config/environment';
 
 const newsApi = {
     news: () =>
-        fetch(`${newsApiUrl}/top-headlines?country=bg&language=bg&apiKey=${newsApiKey}`)
+        fetch(`${serverUrl}/api/news`)
             .then(x => x.json()),
 }
 
