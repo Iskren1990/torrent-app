@@ -43,5 +43,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://torrentee-server.herokuapp.com/",
+  "proxy": "https://torrentee-server.herokuapp.com/"
 }
