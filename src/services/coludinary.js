@@ -1,16 +1,15 @@
-const CLOUD_NAME = "allmighty";
+import { cloudinaryApiUrl, cloudinaryCloudName } from '../config/environment';
 // resources = image, raw, video, auto
 
-const URL = (CLOUD_NAME, resourceType) =>
-    `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/${resourceType}/upload`;
-
 const cloudinaryAPI = {
-
     cloudinaryUpload: (formData) => {
-        return fetch(URL(CLOUD_NAME, "auto"), {
+        const form = new FormData();
+        form.append("file", formData, formData.name);
+        form.append("upload_preset", "ml_default");
+        return fetch(`${cloudinaryApiUrl}/${cloudinaryCloudName}/auto/upload`, {
             method: "POST",
-            body: formData
-        })
+            body: form
+        }).then(res => res.json())
     }
 }
 

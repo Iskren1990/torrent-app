@@ -4,7 +4,7 @@ import fieldValidator from '../../../utils/fieldValidation';
 import style from './Register.module.css';
 import CommonInput from '../../common/CommonInput';
 import SubmitBtn from '../../common/SubmitBtn';
-import UserService from '../UserSrevice';
+import UserService from '../../../services/UserSrevice';
 import UserContextStore from '../../../UserContextStore';
 import TosterContextStore from '../../../TosterContextStore';
 

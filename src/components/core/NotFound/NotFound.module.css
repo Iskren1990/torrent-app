@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+.NotFound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 80vh;
+    width: 100%;
+    --ghost: #528cce;
+    --heading: #e7ebf2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.NotFound h1 {
+    color: var(--heading);
+    font-size: 12.5rem;
+    letter-spacing: .10em;
+    margin: .025em 0;
+    text-shadow: .05em .05em 0 rgba(0, 0, 0, .25);
+    white-space: nowrap;
+}
+
+.NotFound h1>span * {
+    font-size: 12.5em;
+    animation: spooky 2s alternate infinite linear;
+    color: var(--ghost);
+    display: inline-block;
+}
+
+.NotFound h2 {
+    color: var(--heading);
+    margin-bottom: .40em;
+}
+
+.NotFound p {
+    color: #ccc;
+    margin-top: 0;
+}
+
+@keyframes spooky {
+    from {
+        transform: translatey(.15em) scaley(.95);
+    }
+    to {
+        transform: translatey(-.15em);
+    }
+}
+
+@media(max-width: 30rem) {
+    .NotFound h1 {
+        font-size: 8.5rem;
+    }
+}

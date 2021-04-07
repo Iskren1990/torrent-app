@@ -1,6 +1,6 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
+
 import style from './TorrentImdbLink.module.css';
-import { error } from '../../../../utils/messages';
 import ErrorMessage from '../../../common/ErrorMessage';
 
 const TorrentImdbLink = ({ setMovieId }) => {
@@ -17,7 +17,7 @@ const TorrentImdbLink = ({ setMovieId }) => {
     }
 
     return (
-        <Fragment>
+        <>
             <div className={style.row}>
                 <label htmlFor="imdbLink">Add IMDB movie link</label>
                 <input
@@ -28,8 +28,11 @@ const TorrentImdbLink = ({ setMovieId }) => {
                     onBlur={IMDBUrlValidator}
                 />
             </div>
-            { validUrl ? '' : <ErrorMessage error={error.IMDBUrl} /> }
-        </Fragment>
+            {
+                validUrl
+                || <ErrorMessage error={"Wrong IMDB link, it must include tt followed by 7 digits"} />
+            }
+        </>
     );
 }
 

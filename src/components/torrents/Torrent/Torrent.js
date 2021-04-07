@@ -49,11 +49,12 @@ const Torrent = ({ history, match }) => {
                     <SubmitBtn onClick={e => downloadClickHandler(e)} value="Download" />
                 </Link>
                 {
-                   isOwner 
-                   && <SubmitBtn 
-                   onClick={e => deleteClickHandler(e)} 
-                   value="Delete Torrent" 
-                   styles={style.Delete} />
+                    isOwner
+                    && <SubmitBtn
+                        onClick={e => deleteClickHandler(e)}
+                        value="Delete Torrent"
+                        styles={style.Delete}
+                    />
                 }
             </section >}
         </>

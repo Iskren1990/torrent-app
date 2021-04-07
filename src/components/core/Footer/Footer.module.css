@@ -18,3 +18,12 @@
     transform: translateX(100px);
     flex-grow: 1;
 }
+
+@media all and (max-width: 900px) {
+    .Footer  {
+        flex-direction: column;
+    }
+    .FooterNav {
+        transform: none;
+    }
+}

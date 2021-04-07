@@ -1,16 +1,15 @@
 .Header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 40px;
 }
 
-.Header .profile>*,
-.Header .logo>* {
+.Header .profile>*, .Header .logo>* {
     font-family: 'Great Vibes', cursive;
 }
 
-.Header .profile img ,
-.logo img {
+.Header .profile img, .logo img {
     height: 50px;
 }
 
@@ -21,34 +20,31 @@
     margin-left: 10px;
 }
 
-.Header .profile a,
-.logo a {
+.Header .profile a, .logo a {
     height: 50px;
     display: flex;
     align-items: center;
 }
 
-.Header .profile strong,
-.logo strong {
+.Header .profile strong, .logo strong {
     font-size: 2rem;
     margin: 0 10px;
 }
 
-.Header .nav {
+.Hide, .Header .nav {
     display: flex;
     align-items: center;
-    
 }
 
-.Header .nav>* {
+.Hide>*, .Header .nav>* {
     padding: 0px 10px;
 }
 
-.Header .nav strong {
+.Hide strong, .Header .nav strong {
     font-size: 1.2rem;
 }
 
-.Header .nav strong:hover {
+.Hide strong:hover, .Header .nav strong:hover {
     color: rgb(83, 255, 31);
 }
 
@@ -56,4 +52,37 @@
     padding-left: 20px;
     font-size: 2.5rem;
     color: rgb(83, 255, 31);
+}
+
+.Toggle {
+    display: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(83, 255, 31);
+    background: transparent;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+    margin: auto;
+}
+
+@media all and (max-width: 900px) {
+    .Header {
+        position: relative;
+    }
+    .Header .nav {
+        padding: 10px 15px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 100%);
+        background: unset;
+        background-color: rgb(40, 44, 52);
+    }
+    .Hide {
+        display: none;
+    }
+    .Toggle {
+        display: block;
+    }
 }

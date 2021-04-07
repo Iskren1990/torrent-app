@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import UserService from './components/user/UserSrevice';
+import UserService from './services/UserSrevice';
 import UserContextStore from './UserContextStore';
 import LoadingBar from './components/common/LoadingBar';
 

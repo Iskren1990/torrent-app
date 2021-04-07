@@ -6,7 +6,7 @@ import TosterContextStore from '../../../TosterContextStore';
 import style from './Login.module.css';
 import CommonInput from '../../common/CommonInput';
 import SubmitBtn from '../../common/SubmitBtn';
-import UserService from '../UserSrevice';
+import UserService from '../../../services/UserSrevice';
 
 const Login = ({ history }) => {
     const { setToastrMsg } = useContext(TosterContextStore);

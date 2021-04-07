@@ -1,14 +1,16 @@
-import styles from './Header.module.css';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './Header.module.css';
 import NavData from '../../../utils/navigation';
-import { useContext } from 'react';
 import UserContextStore from '../../../UserContextStore';
 import CommonImage from '../../common/CommonImage';
+import SubmitBtn from '../../common/SubmitBtn';
 
 const Header = () => {
     const userData = useContext(UserContextStore);
     const navData = NavData(userData);
-
+    const [burger, setBurger] = useState(false);
+    const toggle = (e) => setBurger(burger => !burger);
     return (
         <header className={styles.Header}>
             <div className={styles.logo}>
@@ -17,12 +19,13 @@ const Header = () => {
                     <strong>Torrentee</strong>
                 </Link>
             </div>
-            <div className={styles.nav}>
-                <ul className={styles.nav}>
+            <div>
+            <SubmitBtn onClick={e => toggle()} styles={styles.Toggle} value={"Menu"}></SubmitBtn>
+                <ul className={burger ? styles.Hide : styles.nav }>
                     {Object.keys(navData)
                         .map(key => {
                             return (
-                                <li key={navData[key].title}>
+                                <li key={navData[key].path}>
                                     <Link to={navData[key].path}>
                                         <strong>{navData[key].title}</strong>
                                     </Link>

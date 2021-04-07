@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import style from './Logout.module.css';
 import SubmitBtn from '../../common/SubmitBtn';
-import UserService from '../UserSrevice';
+import UserService from '../../../services/UserSrevice';
 import UserContextStore from '../../../UserContextStore';
 
 const Logout = ({ history }) => {

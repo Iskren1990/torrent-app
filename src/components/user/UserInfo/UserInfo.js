@@ -9,7 +9,7 @@ import spaceLeader from '../../../assets/space-leader.svg';
 import SubmitBtn from '../../common/SubmitBtn';
 import ScreenshotsUpload from '../../common/ScreenshotsUpload';
 
-import UserService from '../UserSrevice';
+import UserService from '../../../services/UserSrevice';
 
 const UserInfo = (userData) => {
     userData = { ...userData.userData }

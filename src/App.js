@@ -8,6 +8,7 @@ import styles from './App.module.css';
 import Header from './components/core/Header';
 import Footer from './components/core/Footer';
 import Home from './components/core/Home';
+import NotFound from './components/core/NotFound';
 import NavData from './utils/navigation';
 
 function App() {
@@ -15,11 +16,12 @@ function App() {
   const userData = useContext(UserContextStore);
   const { msg } = useContext(TosterContextStore);
   const msgCont = useRef(null);
+  const navData = NavData(userData);
+
   useEffect(() => {
     msgCont.current.error("", msg, 4000)
   }, [msg])
 
-  const navData = NavData(userData);
   return (
     <div className={styles.App}>
       <div className={styles.NotifyItem}>
@@ -40,6 +42,7 @@ function App() {
                 ></Route>
               )
           }
+          <Route component={NotFound} />
         </Switch>
       </main>
       <Footer></Footer>

@@ -9,12 +9,7 @@ const TorrentsListItem = ({ torrentItem }) => {
 
     return (
         <>
-            { isHovered && <CommonImage
-                src={torrentItem.poster}
-                style={style.Img}
-                alt={`${torrentItem.title} poster`}
-                fallback={e => console.log("Immage Not available")}
-            />}
+
             <tr
                 className={style.Item}
                 onMouseEnter={e => setIsHovered(true)}
@@ -25,6 +20,12 @@ const TorrentsListItem = ({ torrentItem }) => {
                         className={style[torrentItem.category]}
                         to={`/torrents/${torrentItem._id}?category=${torrentItem.category}`}
                     />
+                    {isHovered && <CommonImage
+                        src={torrentItem.poster}
+                        style={style.Img}
+                        alt={`${torrentItem.title} poster`}
+                        fallback={e => console.log("Immage Not available")}
+                    />}
                 </td>
                 {
                     [title, imdbRating, createdTime, downloads].map(item =>

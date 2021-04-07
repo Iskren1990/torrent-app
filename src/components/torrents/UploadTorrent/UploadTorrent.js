@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 
-import imdbApi from '../services/imdbApi';
+import imdbApi from '../../../services/imdbApi';
 import torrentModel from '../utils/torentModel';
 import TosterContextStore from '../../../TosterContextStore';
 import fieldValidator from '../../../utils/fieldValidation';
@@ -28,7 +28,6 @@ const UploadTorrent = (props) => {
     const { setToastrMsg } = useContext(TosterContextStore);
 
     useEffect(() => {
-        if (!!movieId === false) return null;
         imdbApi.getOne(movieId)
             .then(x => setMovieData(torrentModel(x)))
             .catch(x => console.log("BE error popup here", x));

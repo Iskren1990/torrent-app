@@ -1,52 +1,12 @@
-const url = "http://localhost:3001/api/torrents";
+import {serverUrl} from '../config/environment';
+import fetchAPI from '../utils/fetchAPI';
 
 const TorrentService = {
-    upload: (torrentData) => {
-        return fetch(url + "/upload", {
-            method: "POST",
-            credentials: "include",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(torrentData)
-        }).then(res => res.json());
-    },
-    get: (query) => {
-        return fetch(`${url}/list?${query}`, {
-            method: "GET",
-            credentials: "include",
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res => res.json());
-    },
-    getOne: (query) => {
-        return fetch(`${url}/${query}`, {
-            method: "GET",
-            credentials: "include",
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res => res.json());
-    },
-    increaseDownload: (torrentId) => {
-        return fetch(`${url}/${torrentId}`, {
-            method: "PUT",
-            credentials: "include",
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res => res.json());
-    },
-    delete: (id) => {
-        return fetch(`${url}/${id}`, {
-            method: "DELETE",
-            credentials: "include",
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res => res.json());
-    }
+    upload: (torrentData) => fetchAPI.post(`${serverUrl}/api/torrents/upload`, torrentData),
+    get: (query) => fetchAPI.get(`${serverUrl}/api/torrents/list?${query}`),
+    getOne: (query) => fetchAPI.get(`${serverUrl}/api/torrents/${query}`),
+    increaseDownload: (torrentId) => fetchAPI.put(`${serverUrl}/api/torrents/${torrentId}`, "1"),
+    delete: (id) => fetchAPI.delete(`${serverUrl}/api/torrents/${id}`),
 }
 
 export default TorrentService;
