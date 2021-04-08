@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import ReactNotify from 'react-notify';
 import TosterContextStore from './TosterContextStore';
 import UserContextStore from './UserContextStore';
+import Loading from './Loading/Loading';
 
 import styles from './App.module.css';
 import Header from './components/core/Header';
@@ -29,6 +30,7 @@ function App() {
       </div>
       <Header></Header>
       <main className={styles.ContentWrapper}>
+        <Loading />
         <Switch>
           <Route exact path="/"><Home></Home></Route>
           {
