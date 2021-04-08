@@ -1,6 +1,9 @@
 .Item a {
-    display: block;
+    display: flex;
     background: rgb(40, 44, 52);
+    height: 50px;
+    align-items: center;
+    justify-content: center;
 }
 
 .Img {
@@ -10,18 +13,14 @@
     position: absolute;
 }
 
-.serial,
-.movies,
-.game,
-.book,
-.music {
+.serial, .movies, .game, .book, .music {
     width: 50px;
     height: 50px;
     object-fit: cover;
     margin: auto;
 }
 
-.serial{
+.serial {
     content: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZzTaP0Bo09Eyt-CdKswDWPV_aOXdd8pl9vGz5kjso8cKlkrzJ4lwOUu9CgsflyGy72x4YSlBNMU&usqp=CAU");
 }
 

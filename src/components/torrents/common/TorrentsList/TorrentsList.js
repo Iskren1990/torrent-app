@@ -3,6 +3,7 @@ import TorrentsListItem from '../TorrentsListItem';
 import CommonTitle from '../../../common/CommonTitle'
 
 const TorrentsList = ({ torrentsArr, heading }) => {
+
     return (
         <section className={style.TorrentList}>
             <CommonTitle title={heading} />
@@ -17,7 +18,7 @@ const TorrentsList = ({ torrentsArr, heading }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {
+                    { torrentsArr instanceof Array &&
                         torrentsArr.map((torrentItem) =>
                             <TorrentsListItem
                                 key={torrentItem._id}
