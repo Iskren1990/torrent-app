@@ -13,13 +13,20 @@ const Register = ({ history }) => {
     const { setToastrMsg } = useContext(TosterContextStore);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [rePassword, setRePassword] = useState("");
+    const [areEqual, setAreEqual] = useState(false);
     const [email, setEmail] = useState("");
     const [age, setAge] = useState("");
 
     const registerSubmitHandler = (e) => {
         e.preventDefault();
 
-        const [err, errCont] = fieldValidator({ username, password, email, age });
+        let [err, errCont] = fieldValidator({ username, password, email, age });
+        
+        if (areEqual === false) {
+            errCont.push("Passwords do not match");
+            err = true;
+        };
         if (err) return setToastrMsg(errCont);
 
         UserService
@@ -32,39 +39,51 @@ const Register = ({ history }) => {
             .catch(x => setToastrMsg(x.message));
     }
 
-return (
-    <form className={style.RegisterForm} onSubmit={registerSubmitHandler}>
-        <h1>Register</h1>
-        <CommonInput
-            value={username}
-            id={"username"}
-            label={"Username:"}
-            onChange={(e) => setUsername(e.target.value)}
-        />
-        <CommonInput
-            type={"password"}
-            value={password}
-            id={"password"}
-            label={"Password:"}
-            onChange={(e) => setPassword(e.target.value)}
-        />
-        <CommonInput
-            type={"email"}
-            value={email}
-            id={"email"}
-            label={"Email:"}
-            onChange={(e) => setEmail(e.target.value)}
-        />
-        <CommonInput
-            type={"number"}
-            value={age}
-            id={"age"}
-            label={"Age:"}
-            onChange={(e) => setAge(e.target.value)}
-        />
-        <SubmitBtn value={"Register"} />
-    </form>
-);
+    const passwordEqualityHandler = (val) => {
+        setRePassword(val);
+        val !== password ? setAreEqual(false) : setAreEqual(true);
+    }
+
+    return (
+        <form className={style.RegisterForm} onSubmit={registerSubmitHandler}>
+            <h1>Register</h1>
+            <CommonInput
+                value={username}
+                id={"username"}
+                label={"Username:"}
+                onChange={(e) => setUsername(e.target.value)}
+            />
+            <CommonInput
+                type={"password"}
+                value={password}
+                id={"password"}
+                label={"Password:"}
+                onChange={(e) => setPassword(e.target.value)}
+            />
+            <CommonInput
+                type={"password"}
+                value={rePassword}
+                id={"rePassword"}
+                label={"Repeat Password:"}
+                onChange={(e) => passwordEqualityHandler(e.target.value)}
+            />
+            <CommonInput
+                type={"email"}
+                value={email}
+                id={"email"}
+                label={"Email:"}
+                onChange={(e) => setEmail(e.target.value)}
+            />
+            <CommonInput
+                type={"number"}
+                value={age}
+                id={"age"}
+                label={"Age:"}
+                onChange={(e) => setAge(e.target.value)}
+            />
+            <SubmitBtn value={"Register"} />
+        </form>
+    );
 }
 
 export default Register;

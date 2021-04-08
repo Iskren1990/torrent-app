@@ -13,7 +13,6 @@ const Torrents = ({ history }) => {
         TorrentService.get("downloads=-1&limit=10")
             .then(res => setTopTenDownloaded(res))
             .catch(console.log);
-            // req for torrents count
     }, []);
 
     useEffect(() => {
@@ -32,7 +31,7 @@ const Torrents = ({ history }) => {
                 page === 0 && <TorrentsList torrentsArr={topTenDownloaded} heading={"Top 10 Downloaded"} />
             }
             <TorrentsList torrentsArr={allTorrentsLit} heading={"Latest Uploaded Torrents"} />
-            <Paginator onPageChange={e => handleClick(e.selected)} />
+            <Paginator filter={`torrents`} onPageChange={e => handleClick(e.selected)} />
         </div>
     );
 }

@@ -30,7 +30,7 @@ const Profile = ({history}) => {
             torrentsArr={allTorrentsLit} 
             heading={`${userData.username}'s uploaded torrents`} 
             />
-            <Paginator onPageChange={e => handleClick(e.selected)} />
+            <Paginator filter={`torrents&uploader=${userData.id}`} onPageChange={e => handleClick(e.selected)} />
         </div>
         </>
     );
