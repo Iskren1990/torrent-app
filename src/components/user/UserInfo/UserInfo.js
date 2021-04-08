@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import TosterContextStore from '../../../TosterContextStore'
+import TosterContextStore from '../../../context/TosterContextStore'
 import fieldValidator from '../../../utils/fieldValidation';
 
 import style from './UserInfo.module.css';

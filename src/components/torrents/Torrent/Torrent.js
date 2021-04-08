@@ -9,7 +9,7 @@ import DescriptionField from '../../common/DescriptionField';
 import Video from '../../common/Video';
 import SubmitBtn from '../../common/SubmitBtn';
 import ScreenshotsSection from '../../common/ScreenshotsSection';
-import UserContextStore from '../../../UserContextStore';
+import UserContextStore from '../../../context/UserContextStore';
 
 const Torrent = ({ history, match }) => {
     const userData = useContext(UserContextStore);

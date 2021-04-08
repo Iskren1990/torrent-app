@@ -5,8 +5,8 @@ import style from './Register.module.css';
 import CommonInput from '../../common/CommonInput';
 import SubmitBtn from '../../common/SubmitBtn';
 import UserService from '../../../services/UserSrevice';
-import UserContextStore from '../../../UserContextStore';
-import TosterContextStore from '../../../TosterContextStore';
+import UserContextStore from '../../../context/UserContextStore';
+import TosterContextStore from '../../../context/TosterContextStore';
 
 const Register = ({ history }) => {
     const userData = useContext(UserContextStore);
@@ -22,7 +22,7 @@ const Register = ({ history }) => {
         e.preventDefault();
 
         let [err, errCont] = fieldValidator({ username, password, email, age });
-        
+
         if (areEqual === false) {
             errCont.push("Passwords do not match");
             err = true;

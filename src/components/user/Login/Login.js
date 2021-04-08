@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import fieldValidator from '../../../utils/fieldValidation';
-import UserContextStore from '../../../UserContextStore';
-import TosterContextStore from '../../../TosterContextStore';
+import UserContextStore from '../../../context/UserContextStore';
+import TosterContextStore from '../../../context/TosterContextStore';
 
 import style from './Login.module.css';
 import CommonInput from '../../common/CommonInput';

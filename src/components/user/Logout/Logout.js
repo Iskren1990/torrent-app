@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import style from './Logout.module.css';
 import SubmitBtn from '../../common/SubmitBtn';
 import UserService from '../../../services/UserSrevice';
-import UserContextStore from '../../../UserContextStore';
+import UserContextStore from '../../../context/UserContextStore';
 
 const Logout = ({ history }) => {
     const userData = useContext(UserContextStore);

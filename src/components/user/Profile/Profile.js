@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 
 import style from './Profile.module.css';
 import UserInfo from '../UserInfo';
-import UserContextStore from '../../../UserContextStore';
+import UserContextStore from '../../../context/UserContextStore';
 import TorrentsList from '../../torrents/common/TorrentsList';
 import TorrentService from '../../../services/torrents';
 import Paginator from '../../common/Paginator';

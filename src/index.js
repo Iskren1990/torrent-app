@@ -4,8 +4,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import UserContext from './UserContext';
-import TosterContext from './TosterContext';
+import UserContext from './context/UserContext';
+import TosterContext from './context/TosterContext';
 
 ReactDOM.render(
   <React.StrictMode>

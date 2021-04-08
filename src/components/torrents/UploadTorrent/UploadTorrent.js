@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 
 import imdbApi from '../../../services/imdbApi';
 import torrentModel from '../utils/torentModel';
-import TosterContextStore from '../../../TosterContextStore';
+import TosterContextStore from '../../../context/TosterContextStore';
 import fieldValidator from '../../../utils/fieldValidation';
 
 import style from './UploadTorrent.module.css';

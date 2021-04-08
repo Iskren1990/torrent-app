@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
-import UserService from './services/UserSrevice';
+import UserService from '../services/UserSrevice';
 import UserContextStore from './UserContextStore';
-import LoadingBar from './components/common/LoadingBar';
+import LoadingBar from '../components/common/LoadingBar';
 
 const UserContext = (props) => {
 

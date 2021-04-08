@@ -1,8 +1,8 @@
 import { useContext, useEffect, useRef } from 'react';
 import { Switch, Route } from "react-router-dom";
 import ReactNotify from 'react-notify';
-import TosterContextStore from './TosterContextStore';
-import UserContextStore from './UserContextStore';
+import TosterContextStore from './context/TosterContextStore';
+import UserContextStore from './context/UserContextStore';
 import Loading from './Loading/Loading';
 
 import styles from './App.module.css';

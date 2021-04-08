@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import NavData from '../../../utils/navigation';
-import UserContextStore from '../../../UserContextStore';
+import UserContextStore from '../../../context/UserContextStore';
 import CommonImage from '../../common/CommonImage';
 import SubmitBtn from '../../common/SubmitBtn';
 
