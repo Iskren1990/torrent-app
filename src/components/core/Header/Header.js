@@ -20,8 +20,8 @@ const Header = () => {
                 </Link>
             </div>
             <div>
-            <SubmitBtn onClick={e => toggle()} styles={styles.Toggle} value={"Menu"}></SubmitBtn>
-                <ul className={burger ? styles.Hide : styles.nav }>
+                <SubmitBtn onClick={e => toggle()} styles={styles.Toggle} value={"Menu"}></SubmitBtn>
+                <ul className={burger ? styles.Hide : styles.nav}>
                     {Object.keys(navData)
                         .map(key => {
                             return (

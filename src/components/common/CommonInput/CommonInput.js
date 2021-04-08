@@ -1,6 +1,6 @@
 import style from './CommonInput.module.css';
 
-const CommonInput = ({ type, value, id, label, onChange, readonly }) => {
+const CommonInput = ({ type, value, id, label, onChange, readonly, placeholder }) => {
     return (
         <div className={ style.CommonInput }>
             <label htmlFor={id}>{label}</label>
@@ -11,6 +11,7 @@ const CommonInput = ({ type, value, id, label, onChange, readonly }) => {
                 name={id} id={id}
                 onChange={onChange}
                 readOnly={readonly || false}
+                placeholder={placeholder || ""}
             />
         </div>
     );

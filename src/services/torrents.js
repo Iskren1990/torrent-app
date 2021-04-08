@@ -1,4 +1,4 @@
-import {serverUrl} from '../config/environment';
+import { serverUrl } from '../config/environment';
 import fetchAPI from '../utils/fetchAPI';
 
 const TorrentService = {

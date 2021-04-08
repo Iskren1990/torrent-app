@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import ReactNotify from 'react-notify';
 import TosterContextStore from './context/TosterContextStore';
 import UserContextStore from './context/UserContextStore';
-import Loading from './Loading/Loading';
+import Loading from './components/common/Loading';
 
 import styles from './App.module.css';
 import Header from './components/core/Header';

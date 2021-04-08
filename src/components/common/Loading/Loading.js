@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import style from './Loading.module.css';
 
-const Loading = ({fetchTimeout}) => {
+const Loading = ({ fetchTimeout }) => {
 
     const [loading, setLoading] = useState(false);
-    const requests = {count: 0};
+    const requests = { count: 0 };
 
     (function monkeyPatchFetch() {
         if (!('fetch' in window)) return
@@ -50,13 +50,13 @@ const Loading = ({fetchTimeout}) => {
 
     const handleRequestEnd = (result) => {
         requests.count--;
-        setTimeout(()=> {
-            if(requests.count <= 0) {
+        setTimeout(() => {
+            if (requests.count <= 0) {
                 requests.count = 0;
                 setLoading(false)
             };
         }, fetchTimeout || 500)
-        
+
     }
 
     const handleRequestStart = (result) => {

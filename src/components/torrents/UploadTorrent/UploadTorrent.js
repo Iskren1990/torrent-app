@@ -46,6 +46,7 @@ const UploadTorrent = (props) => {
             torrentUrl,
             picUrls
         }
+        
         const [err, errCont] = fieldValidator(torrentData);
         if (err) return setToastrMsg(errCont);
 
@@ -60,8 +61,8 @@ const UploadTorrent = (props) => {
             <TorrentName />
             <TorrentTypeInput {...movieData} />
             <TorrentImdbLink setMovieId={setMovieId} />
-            { movieData.imdbID 
-            && <MovieInfoWrapper movieData={movieData} /> }
+            { movieData.imdbID
+                && <MovieInfoWrapper movieData={movieData} />}
             <DescriptionField lebel={"Plot"} text={movieData.plot} readonly={true} />
             <TorrentFile setFile={setTorrentUrl} setUploadBtn={e => setIsSubmitDisabled()} />
             <ScreenshotsUpload setPicUrls={multiplePicUrl} setUploadBtn={e => setIsSubmitDisabled} />

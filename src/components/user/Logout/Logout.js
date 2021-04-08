@@ -19,6 +19,7 @@ const Logout = ({ history }) => {
             .then(userData.logOut)
             .catch(history.push('/'));
     }
+
     const returnToPageHandler = (e) => {
         e.preventDefault()
         history.goBack();

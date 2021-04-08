@@ -3,9 +3,7 @@ import TosterContextStore from './TosterContextStore';
 
 const TosterContext = (props) => {
 
-
     const [msg, setMsg] = useState(null);
-
 
     const setToastrMsg = (msgs) => {
         setMsg(msgs);
