@@ -69,6 +69,7 @@
 @media all and (max-width: 900px) {
     .Header {
         position: relative;
+        padding: 10px 5px;
     }
     .Header .nav {
         padding: 10px 15px;

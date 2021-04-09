@@ -12,3 +12,9 @@
     width: 70%;
     margin: auto;
 }
+
+@media all and (max-width: 700px) {
+    .UserData {
+        width: unset;
+    }
+}

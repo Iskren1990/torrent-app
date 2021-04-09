@@ -3,6 +3,7 @@
     padding: 20px;
     flex: 1 0 90%;
     text-align: center;
+    max-width: 1400px;
 }
 
 .TorrentList>h1 {
@@ -17,4 +18,10 @@
 
 .TorrentList td {
     border: 2px solid rgba(190, 189, 189, 0.4);;
+}
+
+@media all and (max-width: 800px) {
+    .TorrentList {
+        width: unset;
+    }
 }

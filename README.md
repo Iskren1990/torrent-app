@@ -50,7 +50,7 @@ To use local MongoDB change "DB_NAME", "DB_PASSWORD" and "DB_UNAME" located in "
 In the root folder of the client run: 
 
 	
-   :hash: `` npm start ``
+    :hash: `` npm start ``
 	
 
 By default the project uses port 3000 and 3001.
@@ -86,7 +86,7 @@ If the port is in use by other software you can change it by:
 To start the server run:
 
 
-   :hash: `` npm run start-dev ``
+    :hash: `` npm run start-dev ``
 
 
 After successful start you will see the URL on which you can access the app.
@@ -126,7 +126,7 @@ Open a issue with request.
 
 ## Acknowledgements
 
-    :hash: Great thanks to Bugsnag team for the inspiration!
+    :hash: `` Great thanks to Bugsnag team for the inspiration! ``
 
 * [Bugsnag for JavaScript](https://github.com/bugsnag/bugsnag-js/issues/660)
 

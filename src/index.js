@@ -6,13 +6,16 @@ import './index.css';
 import App from './App';
 import UserContext from './context/UserContext';
 import TosterContext from './context/TosterContext';
+import ErrorHandler from './components/common/ErrorHandler';
 
 ReactDOM.render(
   <React.StrictMode>
     <TosterContext>
       <UserContext>
         <Router>
-          <App />
+          <ErrorHandler>
+            <App />
+          </ErrorHandler>
         </Router>
       </UserContext>
     </TosterContext>

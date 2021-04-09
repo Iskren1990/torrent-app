@@ -4,6 +4,7 @@
     height: 50px;
     align-items: center;
     justify-content: center;
+    font-size: 0.9rem;
 }
 
 .Img {
@@ -38,4 +39,10 @@
 
 .music {
     content: url("https://images.macrumors.com/t/tCPS-yWwAQ_siFOl14cUWLHEw1c=/400x0/filters:quality(90)/article-new/2018/05/apple-music-note-800x420.jpg?lossy");
+}
+
+@media all and (max-width: 800px) {
+    .Item a {
+        font-size: 0.8rem;
+    }
 }
