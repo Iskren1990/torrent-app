@@ -28,10 +28,10 @@ const Torrents = ({ history }) => {
         setPage(e)
         history.push(`${history.location.pathname}?page=${e}&limit=20`)
     }
-
+    // `&search=${data}`
     return (
         <div className={style.Wrapper}>
-            <CommonSearch setData={data => setQuery(`&search=${data}`)} />
+            <CommonSearch setData={data => setQuery(data)} />
             {
                 page === 0 && <TorrentsList torrentsArr={topTenDownloaded} heading={"Top 10 Downloaded"} />
             }

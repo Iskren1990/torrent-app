@@ -28,7 +28,7 @@ const Profile = ({ history }) => {
         <>
             <div className={style.Wrapper}>
                 <UserInfo userData={userData} ></UserInfo>
-                <CommonSearch setData={data => setQuery(`&search=${data}`)} />
+                <CommonSearch setData={data => setQuery(data)} />
                 <TorrentsList
                     torrentsArr={allTorrentsLit}
                     heading={`${userData.username}'s uploaded torrents`}

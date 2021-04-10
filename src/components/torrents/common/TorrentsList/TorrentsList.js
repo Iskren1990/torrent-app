@@ -7,6 +7,8 @@ const TorrentsList = ({ torrentsArr, heading }) => {
     return (
         <section className={style.TorrentList}>
             <CommonTitle title={heading} />
+            { !torrentsArr instanceof Array || torrentsArr.length === 0 
+                ? <CommonTitle title={"No Torrents Found"} /> :
             <table>
                 <thead>
                     <tr>
@@ -17,6 +19,7 @@ const TorrentsList = ({ torrentsArr, heading }) => {
                         <td>Downloads</td>
                     </tr>
                 </thead>
+                
                 <tbody>
                     { torrentsArr instanceof Array &&
                         torrentsArr.map((torrentItem) =>
@@ -28,6 +31,7 @@ const TorrentsList = ({ torrentsArr, heading }) => {
                     }
                 </tbody>
             </table>
+                }
         </section>
     );
 }

@@ -23,5 +23,6 @@
 @media all and (max-width: 800px) {
     .TorrentList {
         width: unset;
+        padding: unset;
     }
 }

@@ -6,12 +6,11 @@ const TorrentTypeInput = () => {
 
             <label className={style.label} htmlFor="category">Choose category</label>
             <select className={style.TorrentTypeInput} id="category" name="category">
-                <option value=""></option>
                 <option value="movies">Movies</option>
-                <option value="music">Music</option>
                 <option value="serial">Serials</option>
+                {/* <option value="music">Music</option>
                 <option value="game">Games</option>
-                <option value="book">Books</option>
+                <option value="book">Books</option> */}
             </select>
 
         </div>

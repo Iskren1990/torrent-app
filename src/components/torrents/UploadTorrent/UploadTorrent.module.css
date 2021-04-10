@@ -12,3 +12,19 @@
     border: none;
     border-radius: 1px;
 }
+
+
+@media all and (max-width: 400px) {
+    .UploadTorrent {
+        padding: unset;
+        border: unset;
+    }
+    .UploadTorrent>* {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .UploadTorrent>*::after {
+        display: none;
+    }
+}
