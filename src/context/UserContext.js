@@ -12,7 +12,6 @@ const UserContext = (props) => {
 
     const updateUserInfo = useCallback(() => {
         return UserService.profile()
-        // .then(console.log)
             .then(userData => logIn(userData))
             .catch(err => { setToastrMsg(err); setLoading(false) })
     }, []);
