@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import cloudinaryAPI from '../../../../services/coludinary';
+import TosterContextStore from '../../../../context/TosterContextStore';
 
 import style from './TorrentFile.module.css';
 import ErrorMessage from '../../../common/ErrorMessage';
 
 const TorrentFile = ({ setFile, setUploadBtn }) => {
-
+    const { setToastrMsg } = useContext(TosterContextStore);
     const [isValid, setIsValid] = useState(true);
 
     const size = (e) => {
@@ -16,7 +17,7 @@ const TorrentFile = ({ setFile, setUploadBtn }) => {
         setIsValid(true);
         cloudinaryAPI.cloudinaryUpload(e.target.files[0])
             .then(res => { setFile(res.url); setUploadBtn(false) })
-            .catch(console.log);
+            .catch(setToastrMsg);
     }
     return (
         <>

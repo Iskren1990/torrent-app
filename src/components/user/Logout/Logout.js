@@ -1,23 +1,20 @@
 import { useContext } from 'react';
+import UserContextStore from '../../../context/UserContextStore';
+import TosterContextStore from '../../../context/TosterContextStore';
 
 import style from './Logout.module.css';
 import SubmitBtn from '../../common/SubmitBtn';
 import UserService from '../../../services/UserSrevice';
-import UserContextStore from '../../../context/UserContextStore';
 
 const Logout = ({ history }) => {
     const userData = useContext(UserContextStore);
-
+    const { setToastrMsg } = useContext(TosterContextStore);
     const logoutPageHandler = (e) => {
         e.preventDefault()
         UserService.logout()
-            .then(res =>
-                res.message === "Logged out successfully"
-                    ? history.push('/')
-                    : history.push('/') // toaster message
-            )
+            .then(res =>history.push('/'))
             .then(userData.logOut)
-            .catch(history.push('/'));
+            .catch(setToastrMsg);
     }
 
     const returnToPageHandler = (e) => {

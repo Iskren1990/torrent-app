@@ -26,7 +26,7 @@ const Login = ({ history }) => {
                 history.push('/')
                 userData.logIn(res)
             })
-            .catch(x => setToastrMsg(x.message));
+            .catch(setToastrMsg);
     }
 
     return (

@@ -34,6 +34,7 @@
   align-items: center;
   align-content: center;
   position: absolute;
+  z-index: 99999999;
   top: 0;
   right: 0;
   background-color: rgba(203, 100, 94, 0.8);

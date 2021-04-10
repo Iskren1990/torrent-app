@@ -35,11 +35,8 @@ const UserInfo = (userData) => {
         UserService.editProfile({ username, email, age, avatar })
             .then(setIsNotEdditable(true))
             .then(userData.updateUserInfo())
-            .then(res => {
-                if (res.message) throw new Error(res.message);
-                userData.logIn(res)
-            })
-            .catch(x => setToastrMsg(x.message));
+            .then(res => userData.logIn(res))
+            .catch(setToastrMsg);
     }
 
     return (

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import style from './TorrentImdbLink.module.css';
 import ErrorMessage from '../../../common/ErrorMessage';
 
-const TorrentImdbLink = ({ setMovieId }) => {
+const TorrentImdbLink = ({ setMovieId, placeholder }) => {
 
     const [validUrl, setValidUrl] = useState(true);
 
@@ -26,6 +26,7 @@ const TorrentImdbLink = ({ setMovieId }) => {
                     name="imdbLink"
                     id="imdbLink"
                     onBlur={IMDBUrlValidator}
+                    placeholder={placeholder || ""}
                 />
             </div>
             {

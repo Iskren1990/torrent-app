@@ -30,7 +30,7 @@ const UploadTorrent = (props) => {
     useEffect(() => {
         imdbApi.getOne(movieId)
             .then(x => setMovieData(torrentModel(x)))
-            .catch(x => console.log("BE error popup here", x));
+            .catch(setToastrMsg);
     }, [movieId]);
 
     const multiplePicUrl = url => setPicUrls(url);
@@ -52,15 +52,15 @@ const UploadTorrent = (props) => {
 
         TorrentService.upload(torrentData)
             .then(res => props.history.push(`/torrents/${res._id}?category=${res.category}`))
-            .catch(console.log);
+            .catch(setToastrMsg);
     }
 
     return (
         <form className={style.UploadTorrent} onSubmit={handleSubmit} >
             <CommonTitle styles={style.title} title={"Upload Torrent"} />
-            <TorrentName />
+            <TorrentName placeholder="The Expendables (2010 film)" />
             <TorrentTypeInput {...movieData} />
-            <TorrentImdbLink setMovieId={setMovieId} />
+            <TorrentImdbLink setMovieId={setMovieId} placeholder="https://www.imdb.com/title/tt7638348/" />
             { movieData.imdbID
                 && <MovieInfoWrapper movieData={movieData} />}
             <DescriptionField lebel={"Plot"} text={movieData.plot} readonly={true} />

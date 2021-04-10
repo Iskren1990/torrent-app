@@ -7,7 +7,8 @@ const fetchAPI = {
                 'Content-Type': 'application/json'
             },
         })
-            .then(res => res.json());
+            .then(res => res.json())
+            .then(res => checkErr(res));
     },
     post: (url, data) => {
         return fetch(url, {
@@ -18,7 +19,8 @@ const fetchAPI = {
             },
             body: JSON.stringify(data)
         })
-            .then(res => res.json());
+            .then(res => res.json())
+            .then(res => checkErr(res));
     },
     put: (url, data) => {
         return fetch(url, {
@@ -29,7 +31,8 @@ const fetchAPI = {
             },
             body: JSON.stringify(data)
         })
-            .then(res => res.json());
+            .then(res => res.json())
+            .then(res => checkErr(res));
     },
     delete: (url) => {
         return fetch(url, {
@@ -38,10 +41,18 @@ const fetchAPI = {
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then(res => res.json());
+        })
+            .then(res => res.json())
+            .then(res => checkErr(res));
     },
 }
 
 export default fetchAPI;
 
 
+function checkErr(res) {
+    if (res.err) {
+        throw res.message;
+    }
+    return res;
+}

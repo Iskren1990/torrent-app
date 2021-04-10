@@ -1,8 +1,11 @@
+import {useContext} from 'react';
+
 import CommonInputFile from '../CommonInputFile';
 import cloudinaryAPI from '../../../services/coludinary';
+import TosterContextStore from '../../../context/TosterContextStore';
 
 const ScreenshotsUpload = ({ setPicUrls, single, setUploadBtn }) => {
-
+    const { setToastrMsg } = useContext(TosterContextStore);
     const loadFile = (event) => {
         event.persist();
         const urlArr = [];
@@ -14,7 +17,7 @@ const ScreenshotsUpload = ({ setPicUrls, single, setUploadBtn }) => {
                     .then(res => urlArr.push(res.url))
                     .then(ews =>  (i === event.target.files.length - 1 ) && setPicUrls(urlArr))
                     .then(res => setUploadBtn(false))
-                    .catch(console.log);
+                    .catch(setToastrMsg);
             });
     };
 

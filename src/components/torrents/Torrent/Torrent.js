@@ -39,7 +39,7 @@ const Torrent = ({ history, match }) => {
 
     return (
         <>
-            { movieData.category && <section className={style.Torrent} >
+            { movieData && movieData.category && <section className={style.Torrent} >
                 <CommonTitle title={torrentData.title} />
                 <Video videoId={movieData.videoId} />
                 <MovieInfoWrapper movieData={movieData} />

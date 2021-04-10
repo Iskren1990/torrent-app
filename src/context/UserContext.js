@@ -1,27 +1,25 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, useContext } from 'react';
 import UserService from '../services/UserSrevice';
 import UserContextStore from './UserContextStore';
+import TosterContextStore from './TosterContextStore';
+
 import LoadingBar from '../components/common/LoadingBar';
 
 const UserContext = (props) => {
-
+    const { setToastrMsg } = useContext(TosterContextStore);
     const [user, setUser] = useState({ isLogged: false });
     const [loading, setLoading] = useState(true);
 
     const updateUserInfo = useCallback(() => {
-        UserService.profile()
-            .then(userData =>
-                !userData.err
-                    ? logIn(userData)
-                    : setLoading(false)
-            ).catch(console.log)
+        return UserService.profile()
+        // .then(console.log)
+            .then(userData => logIn(userData))
+            .catch(err => { setToastrMsg(err); setLoading(false) })
     }, []);
-
 
     useEffect(() => {
         updateUserInfo();
     }, [updateUserInfo]);
-
 
     const logIn = (user) => {
         setUser({ isLogged: true, ...user });
@@ -32,7 +30,6 @@ const UserContext = (props) => {
         setUser({ isLogged: false });
         setLoading(false)
     }
-
 
     if (loading) {
         return <LoadingBar />

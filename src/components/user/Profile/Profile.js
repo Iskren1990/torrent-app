@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import TorrentService from '../../../services/torrents';
 import UserContextStore from '../../../context/UserContextStore';
+import TosterContextStore from '../../../context/TosterContextStore';
 
 import style from './Profile.module.css';
 import UserInfo from '../UserInfo';
@@ -9,6 +10,7 @@ import Paginator from '../../common/Paginator';
 import CommonSearch from '../../common/CommonSearch';
 
 const Profile = ({ history }) => {
+    const { setToastrMsg } = useContext(TosterContextStore);
     const userData = useContext(UserContextStore);
     const [allTorrentsLit, setAllTorrentsLit] = useState([]);
     const [page, setPage] = useState(0);
@@ -17,7 +19,8 @@ const Profile = ({ history }) => {
     useEffect(() => {
         TorrentService.get(`uploader=${userData.id}&page=${page}&limit=10${query}`)
             .then(torrentsArr => setAllTorrentsLit(torrentsArr))
-    }, [userData, page, query]);
+            .catch(setToastrMsg);
+    }, [page, query]);
 
     const handleClick = (e) => {
         setPage(e)
