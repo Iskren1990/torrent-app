@@ -7,3 +7,9 @@
 .NewsSection .Links {
     flex-basis: 40%;
 }
+
+@media all and (max-width: 400px) {
+    .NewsSection {
+        display: unset;
+    }
+}
