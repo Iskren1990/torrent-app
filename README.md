@@ -8,7 +8,7 @@
 
 ## About The Project
 
-   Yet another torrent hosting syte Torrentee combines a huge list of torrents with a fantastic user experience, especially if you’re looking for high-quality anime episodes or reading material.
+   Yet another torrent hosting site Torrentee combines a huge list of torrents with a fantastic user experience, especially if you’re looking for high-quality anime episodes or reading material.
 
 Some of the stuff on Torrentee is difficult to find on other trackers, but you’re likely to find the most popular torrents here as well — there are over 4.8 million to choose from.
 
