@@ -56,7 +56,6 @@ const Loading = ({ fetchTimeout }) => {
                 setLoading(false)
             };
         }, fetchTimeout || 500)
-
     }
 
     const handleRequestStart = (result) => {
