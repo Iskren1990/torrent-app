@@ -1,10 +1,10 @@
-<h1 align="center" href="https://torrentee.cf">Torrentee</h1>
+<h1 align="center" href=" https://torentee-client.herokuapp.com">Torrentee</h1>
 
 
 
 
 
-[![Alt][home-events-screenshot]](https://torrentee.cf)
+[![Alt][home-events-screenshot]]( https://torentee-client.herokuapp.com)
 
 ## About The Project
 
@@ -12,7 +12,7 @@
 
 Some of the stuff on Torrentee is difficult to find on other trackers, but you’re likely to find the most popular torrents here as well — there are over 4.8 million to choose from.
 
-#### Currently hosted on [Heroku](https://torrentee.cf) 
+#### Currently hosted on [Heroku]( https://torentee-client.herokuapp.com) 
 
 
 ### Built With
@@ -94,9 +94,9 @@ After successful start you will see the URL on which you can access the app.
 
 ## Usage
 
-[![Alt][event-page-screenshot]](https://torrentee.cf)
+[![Alt][event-page-screenshot]]( https://torentee-client.herokuapp.com)
 
-[![Alt][share-screen-screenshot]](https://torrentee.cf)
+[![Alt][share-screen-screenshot]]( https://torentee-client.herokuapp.com)
 
 
 ## Roadmap
